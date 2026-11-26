@@ -1,0 +1,4929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<title>工资日历</title>
+<meta name="description" content="班次日历 · 计件计时 · 工资核算 · 借支记录" />
+<meta name="theme-color" content="#2F6BFF" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0B0C10" media="(prefers-color-scheme: dark)" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="工资日历" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+<link rel="icon" type="image/png" href="data:image/png;base64,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" />
+<style>
+/* ============================================================
+   工资日历 · iOS 风格样式
+   白底圆角卡片 / 主色 #2F6BFF / 跟随系统深色模式 / 安全区适配
+   ============================================================ */
+
+:root {
+  --brand: #2F6BFF;
+  --brand-2: #5C8CFF;
+  --brand-soft: rgba(47, 107, 255, 0.10);
+  --brand-soft-2: rgba(47, 107, 255, 0.16);
+
+  --bg: #F3F5F9;
+  --card: #FFFFFF;
+  --card-2: #F7F8FB;
+  --topbar: rgba(243, 245, 249, 0.82);
+
+  --text: #14161C;
+  --text-2: #6A7180;
+  --text-3: #9EA4B2;
+  --line: rgba(20, 22, 28, 0.07);
+  --line-strong: rgba(20, 22, 28, 0.12);
+
+  --white-shift: #2F6BFF;
+  --night-shift: #8B5CF6;
+  --rest-shift: #9AA0AC;
+
+  --off: #FF3B30;
+  --off-soft: rgba(255, 59, 48, 0.10);
+  --work: #8E8E93;
+  --work-soft: rgba(142, 142, 147, 0.14);
+  --danger: #FF3B30;
+  --ok: #0FA968;
+  --warn: #F5A623;
+
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04), 0 2px 8px rgba(17, 24, 39, 0.05);
+  --shadow: 0 2px 10px rgba(17, 24, 39, 0.05), 0 10px 30px rgba(17, 24, 39, 0.06);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --tabbar-h: 56px;
+
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro SC", "SF Pro Text", "PingFang SC",
+    "Helvetica Neue", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #4F82FF;
+    --brand-2: #7AA2FF;
+    --brand-soft: rgba(79, 130, 255, 0.16);
+    --brand-soft-2: rgba(79, 130, 255, 0.24);
+
+    --bg: #000000;
+    --card: #16181D;
+    --card-2: #1E2027;
+    --topbar: rgba(0, 0, 0, 0.78);
+
+    --text: #F2F3F7;
+    --text-2: #9AA0AE;
+    --text-3: #6E7480;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.14);
+
+    --white-shift: #4F82FF;
+    --night-shift: #A78BFA;
+    --rest-shift: #7A8090;
+
+    --off: #FF453A;
+    --off-soft: rgba(255, 69, 58, 0.16);
+    --work: #98989F;
+    --work-soft: rgba(152, 152, 159, 0.18);
+    --danger: #FF453A;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.45), 0 12px 34px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+input {
+  font-family: inherit;
+  font-size: 16px; /* 16px 以上避免 iOS 聚焦缩放 */
+  color: var(--text);
+  border: 0;
+  background: none;
+  outline: none;
+  min-width: 0;
+}
+
+/* ============================== 布局骨架 ============================== */
+
+.app {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.page {
+  display: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  animation: pageIn 0.24s ease both;
+}
+.page.active { display: flex; }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 12px 22px;
+}
+
+.content {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* ============================== 顶栏 ============================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  padding: calc(6px + var(--sat)) 12px 6px;
+  background: var(--topbar);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid transparent;
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.round-btn {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+.round-btn:active { transform: scale(0.92); background: var(--card-2); }
+
+.month-title {
+  flex: 1 1 auto;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: background 0.16s ease;
+}
+.month-title:active { background: var(--brand-soft); }
+
+.page-heading {
+  flex: 1 1 auto;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.text-btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+.text-btn:active { transform: scale(0.95); background: var(--brand-soft-2); }
+.text-btn.on { background: var(--brand); color: #fff; }
+
+/* ============================== 概览条 ============================== */
+
+.summary {
+  max-width: 560px;
+  margin: 10px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 10px 6px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sum-cell { text-align: center; position: relative; }
+.sum-cell + .sum-cell::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--line);
+}
+.sum-num {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.2px;
+}
+.sum-num.money { color: var(--brand); font-family: var(--mono); font-size: 16px; }
+.sum-label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 1px;
+}
+
+/* ============================== 同步状态条 ============================== */
+
+.sync-bar {
+  max-width: 560px;
+  margin: 8px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  background: var(--brand-soft);
+  color: var(--brand);
+  cursor: pointer;
+}
+.sync-bar.warn { background: rgba(255, 159, 10, 0.16); color: #A9660B; }
+.sync-bar .sync-ico { flex: none; font-size: 14px; }
+.sync-bar .sync-text { flex: 1; min-width: 0; }
+.sync-bar .sync-go {
+  flex: none;
+  font-weight: 600;
+  font-size: 12px;
+  opacity: 0.92;
+  white-space: nowrap;
+}
+.sync-bar:active { transform: scale(0.995); }
+
+@media (prefers-color-scheme: dark) {
+  .sync-bar.warn { background: rgba(255, 159, 10, 0.20); color: #FFB340; }
+}
+
+/* ============================== 星期行 ============================== */
+
+.weekdays {
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px 2px 2px;
+  font-size: 12px;
+  color: var(--text-3);
+  text-align: center;
+  font-weight: 600;
+}
+.weekdays .wk { color: var(--brand); }
+
+/* ============================== 日历网格 ============================== */
+
+.grid {
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.cell {
+  position: relative;
+  min-height: 74px;
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  padding: 4px 4px 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+  overflow: hidden;
+}
+.cell:active { transform: scale(0.95); }
+
+.cell.muted { opacity: 0.32; box-shadow: none; background: transparent; }
+.cell.today { box-shadow: 0 0 0 1.5px var(--brand), var(--shadow-sm); }
+.cell.today .dnum { color: var(--brand); }
+.cell.sel { background: var(--brand-soft); box-shadow: 0 0 0 1.5px var(--brand); }
+.cell.sel::after {
+  content: "✓";
+  position: absolute;
+  left: 3px; bottom: 3px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+.cell-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2px;
+  min-height: 20px;
+}
+.dnum {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  font-variant-numeric: tabular-nums;
+  padding-left: 1px;
+}
+.cell.muted .dnum { font-size: 14px; color: var(--text-3); font-weight: 500; }
+
+.badge {
+  display: inline-block;
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 3px;
+  border-radius: 4px;
+  letter-spacing: 0;
+  flex: 0 0 auto;
+}
+.badge-off { background: var(--off); color: #fff; }
+.badge-work { background: var(--work); color: #fff; }
+
+.cell-lunar {
+  font-size: 9.5px;
+  color: var(--text-3);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cell-fest {
+  font-size: 9.5px;
+  line-height: 1.25;
+  color: var(--brand);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 12px;
+}
+.cell-fest.term { color: var(--ok); }
+.cell-fest.lunar-fest { color: var(--warn); }
+
+.cell-shift {
+  margin-top: auto;
+  border-radius: 7px;
+  padding: 2px 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cell-shift .amt { font-family: var(--mono); font-size: 9px; letter-spacing: -0.2px; }
+.cell-shift.white { background: var(--white-shift); }
+.cell-shift.night { background: var(--night-shift); }
+.cell-shift.rest { background: var(--rest-shift); }
+.cell-shift.placeholder { opacity: 0; background: transparent; }
+
+/* ============================== 图例 ============================== */
+
+.legend {
+  max-width: 560px;
+  margin: 14px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.legend span { display: inline-flex; align-items: center; gap: 4px; }
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.dot-white { background: var(--white-shift); }
+.dot-night { background: var(--night-shift); }
+.dot-rest { background: var(--rest-shift); }
+.legend .badge { font-size: 8px; }
+
+/* ============================== 通用卡片 ============================== */
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+}
+.card-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.card-head .card-title { margin: 0; }
+.card-head.standalone {
+  padding: 2px 4px 0;
+  margin-bottom: 0;
+}
+.hint {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  color: var(--text-3);
+  line-height: 1.5;
+}
+
+/* ============================== 统计：出勤 ============================== */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.stat-box {
+  background: var(--card-2);
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+}
+.stat-box .v {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.stat-box .k { display: block; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.stat-box.white .v { color: var(--white-shift); }
+.stat-box.night .v { color: var(--night-shift); }
+.stat-box.rest .v { color: var(--rest-shift); }
+.stat-box.total .v { color: var(--text); }
+.stat-box.allow .v { color: var(--warn); }
+
+/* ============================== 统计：明细行 ============================== */
+
+.rows { display: flex; flex-direction: column; }
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.row:last-child { border-bottom: 0; }
+.row-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.row-label { font-size: 14px; }
+.row-sub { font-size: 11px; color: var(--text-3); }
+.row-sub.warn { color: var(--warn); }
+.row-sub.ok { color: var(--ok); }
+.row-val {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.row-val.neg { color: var(--danger); }
+.row.sum {
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 0;
+  margin-top: 4px;
+  padding-top: 11px;
+  font-weight: 700;
+}
+.row.sum .row-label, .row.sum .row-val { font-size: 15px; font-weight: 700; }
+
+.net-box {
+  margin-top: 12px;
+  background: var(--brand-soft);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.net-box .nb-label { font-size: 13px; color: var(--brand); font-weight: 600; }
+.net-box .nb-val {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================== 全年概览 ============================== */
+
+.year-list { display: flex; flex-direction: column; }
+.year-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+}
+.year-row:last-child { border-bottom: 0; }
+.year-row .ym { width: 52px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.year-row .bar {
+  flex: 1 1 auto;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--card-2);
+  overflow: hidden;
+}
+.year-row .bar i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition: width 0.4s ease;
+}
+.year-row .yv {
+  width: 92px;
+  text-align: right;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.year-row.cur { background: var(--brand-soft); border-radius: 8px; padding-left: 6px; }
+.year-row.cur .ym { color: var(--brand); font-weight: 700; }
+
+/* ============================== 月份底部小卡片 ============================== */
+
+.month-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: linear-gradient(160deg, var(--card), var(--card-2));
+}
+.mc-item { text-align: center; padding: 4px 2px; }
+.mc-k { display: block; font-size: 11px; color: var(--text-3); }
+.mc-v {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.mc-item.loan .mc-v { color: var(--danger); }
+.mc-item.due .mc-v { color: var(--text); }
+.mc-item.left .mc-v { color: var(--ok); font-size: 18px; }
+.mc-item.left.negative .mc-v { color: var(--danger); }
+
+.primary-sm {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 17px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  flex: 0 0 auto;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+.primary-sm:active { transform: scale(0.95); opacity: 0.9; }
+
+/* ============================== 借支记录 ============================== */
+
+.loan-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 2px 6px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+.loan-group-head b { color: var(--text-2); font-size: 13px; }
+.loan-group-head .sum { font-family: var(--mono); color: var(--danger); font-weight: 600; }
+
+.loan-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 7px;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+.loan-item:active { transform: scale(0.99); }
+.loan-item.sel { background: var(--brand-soft); box-shadow: 0 0 0 1.5px var(--brand); }
+
+.loan-date {
+  flex: 0 0 auto;
+  width: 46px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.loan-date small { display: block; font-size: 9.5px; color: var(--text-3); font-weight: 500; }
+.loan-main { flex: 1 1 auto; min-width: 0; }
+.loan-note {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.loan-note.empty { color: var(--text-3); font-size: 13px; }
+.loan-meta { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+.loan-amt {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--danger);
+  font-variant-numeric: tabular-nums;
+}
+.loan-del {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--off-soft);
+  color: var(--danger);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loan-del:active { transform: scale(0.9); }
+.loan-check {
+  flex: 0 0 auto;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: transparent;
+}
+.loan-item.sel .loan-check { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* ============================== 空状态 ============================== */
+
+.empty {
+  text-align: center;
+  padding: 26px 10px;
+  color: var(--text-3);
+}
+.empty .ico { font-size: 30px; display: block; margin-bottom: 8px; opacity: 0.85; }
+.empty .t { font-size: 13.5px; color: var(--text-2); }
+.empty .s { font-size: 11.5px; margin-top: 4px; line-height: 1.5; }
+
+/* ============================== 设置：参数行 ============================== */
+
+.param-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 46px;
+  border-bottom: 1px solid var(--line);
+}
+.param-row:last-of-type { border-bottom: 0; }
+.param-name { font-size: 14px; flex: 1 1 auto; }
+.input-unit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+.input-unit input {
+  width: 92px;
+  height: 34px;
+  text-align: right;
+  border-radius: 9px;
+  background: var(--card-2);
+  padding: 0 8px;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  transition: box-shadow 0.16s ease;
+}
+.input-unit input:focus { box-shadow: 0 0 0 1.5px var(--brand) inset; }
+.input-unit i { font-style: normal; font-size: 12px; color: var(--text-3); min-width: 26px; }
+
+.list-btn {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  text-align: left;
+  transition: opacity 0.16s ease;
+}
+.list-btn:last-of-type { border-bottom: 0; }
+.list-btn:active { opacity: 0.6; }
+.list-btn-sub { font-size: 11.5px; color: var(--text-3); }
+.list-btn.danger { color: var(--danger); }
+.list-btn.danger .list-btn-sub { color: var(--danger); opacity: 0.7; }
+
+.about p { margin: 0 0 8px; font-size: 12.5px; color: var(--text-2); line-height: 1.6; }
+.about p:last-child { margin-bottom: 0; }
+.about b { color: var(--text); }
+
+/* ============================== 底部 Tab ============================== */
+
+.tabbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  height: calc(var(--tabbar-h) + var(--sab));
+  padding-bottom: var(--sab);
+  background: var(--topbar);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--line);
+  z-index: 20;
+}
+
+.tab {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-3);
+  transition: color 0.18s ease, transform 0.16s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tab:active { transform: scale(0.94); }
+.tab.active { color: var(--brand); }
+.tab-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.tab-ico svg { width: 23px; height: 23px; display: block; }
+.tab.active .tab-ico { opacity: 1; transform: translateY(-0.5px); }
+.tab-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.2px; }
+
+/* ============================== 批量操作条 ============================== */
+
+.batchbar {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: calc(var(--tabbar-h) + var(--sab) + 8px);
+  z-index: 30;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(10, 20, 60, 0.18);
+  padding: 10px 12px;
+  animation: barIn 0.22s ease both;
+}
+@keyframes barIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.batch-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--text-2);
+  margin-bottom: 8px;
+}
+.link-btn { color: var(--brand); font-size: 12.5px; font-weight: 600; padding: 4px 2px; }
+.batch-actions {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+.batch-actions button {
+  height: 42px;
+  border-radius: 10px;
+  background: var(--card-2);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: transform 0.14s ease, background 0.14s ease;
+}
+.batch-actions button:active { transform: scale(0.94); background: var(--brand-soft); }
+.batch-actions button.danger { color: var(--danger); background: var(--off-soft); }
+.batch-actions button .dot { width: 6px; height: 6px; }
+#lnBatchActions { grid-template-columns: repeat(2, 1fr); }
+
+/* ============================== 底部弹层 ============================== */
+
+.sheet-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 12, 24, 0.35);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+.sheet-mask.open { opacity: 1; }
+
+.sheet {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 22px 22px 0 0;
+  padding: 8px 16px calc(16px + var(--sab));
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.sheet-mask.open .sheet { transform: translateY(0); }
+
+.sheet-grab {
+  width: 36px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--line-strong);
+  margin: 4px auto 12px;
+}
+.sheet-title { margin: 0 0 14px; font-size: 17px; font-weight: 700; }
+
+.day-head { text-align: center; margin-bottom: 12px; }
+.day-title { font-size: 21px; font-weight: 800; letter-spacing: -0.2px; }
+.day-sub { font-size: 12.5px; color: var(--text-2); margin-top: 3px; }
+.day-tags {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--card-2);
+  color: var(--text-2);
+}
+.tag.off { background: var(--off-soft); color: var(--off); }
+.tag.work { background: var(--work-soft); color: var(--work); }
+.tag.brand { background: var(--brand-soft); color: var(--brand); }
+.tag.ok { background: rgba(15, 169, 104, 0.12); color: var(--ok); }
+
+.day-est {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-2);
+  background: var(--card-2);
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+.day-est b { font-family: var(--mono); font-size: 13px; }
+
+.shift-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+.shift-btn {
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 1.5px solid var(--line);
+  background: var(--card-2);
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+.shift-btn:active { transform: scale(0.96); }
+.shift-btn .sb-name { font-size: 15px; font-weight: 700; }
+.shift-btn .sb-amt {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+.shift-btn.white.active { border-color: var(--white-shift); background: rgba(47, 107, 255, 0.10); }
+.shift-btn.white.active .sb-name, .shift-btn.white.active .sb-amt { color: var(--white-shift); }
+.shift-btn.night.active { border-color: var(--night-shift); background: rgba(139, 92, 246, 0.10); }
+.shift-btn.night.active .sb-name, .shift-btn.night.active .sb-amt { color: var(--night-shift); }
+.shift-btn.rest.active { border-color: var(--rest-shift); background: var(--card-2); }
+.shift-btn.rest.active .sb-name { color: var(--rest-shift); }
+.shift-btn.clear.active { border-color: var(--danger); background: var(--off-soft); }
+.shift-btn.clear.active .sb-name { color: var(--danger); }
+
+.field { display: block; margin-bottom: 12px; }
+.field-label {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-bottom: 5px;
+  padding-left: 2px;
+}
+.field input {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--card-2);
+  padding: 0 12px;
+  font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field input[type="date"] { display: flex; align-items: center; }
+.field input:focus { box-shadow: 0 0 0 1.5px var(--brand) inset; }
+
+.primary-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+.primary-btn:active { transform: scale(0.98); opacity: 0.92; }
+
+/* ============================== 确认弹窗 ============================== */
+
+.dialog-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(8, 12, 24, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.dialog-mask.open { opacity: 1; }
+.dialog {
+  width: 100%;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px 18px 14px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(10, 20, 60, 0.25);
+  transform: scale(0.94);
+  transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.dialog-mask.open .dialog { transform: scale(1); }
+.dialog h3 { margin: 0 0 8px; font-size: 16.5px; font-weight: 700; }
+.dialog p { margin: 0 0 14px; font-size: 13px; color: var(--text-2); line-height: 1.55; }
+.dlg-input {
+  width: 100%;
+  height: 44px;
+  border-radius: 11px;
+  background: var(--card-2);
+  padding: 0 12px;
+  margin-bottom: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.dlg-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.dlg-actions button {
+  height: 44px;
+  border-radius: 12px;
+  background: var(--card-2);
+  font-size: 15px;
+  font-weight: 600;
+}
+.dlg-actions button.danger { background: var(--danger); color: #fff; }
+.dlg-actions button:active { opacity: 0.85; }
+
+/* ============================== Toast ============================== */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--tabbar-h) + var(--sab) + 26px);
+  transform: translate(-50%, 12px);
+  z-index: 300;
+  max-width: 78vw;
+  padding: 10px 16px;
+  border-radius: 22px;
+  background: rgba(28, 32, 44, 0.94);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.32, 0.72, 0, 1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (prefers-color-scheme: dark) {
+  .toast { background: rgba(58, 62, 74, 0.96); }
+}
+
+/* ============================== 小屏微调 ============================== */
+
+@media (max-width: 350px) {
+  .cell { min-height: 68px; }
+  .dnum { font-size: 15px; }
+  .summary { padding: 8px 4px; }
+  .sum-num { font-size: 15px; }
+  .batch-actions { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 420px) {
+  .cell { min-height: 82px; }
+  .dnum { font-size: 18px; }
+}
+
+/* 尊重减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================== 补充细节 ============================== */
+
+/* 有小备注的日期：日号后的小圆点 */
+.note-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brand);
+  margin-left: 2px;
+  vertical-align: 5px;
+}
+
+/* 通用确认弹窗的主按钮 */
+.dlg-actions button.primary { background: var(--brand); color: #fff; }
+
+/* 借支汇总里的金额字号 */
+.stat-box.money .v {
+  font-size: 15px;
+  font-family: var(--mono);
+  letter-spacing: -0.3px;
+}
+
+/* 计件/时薪输入为空时保留占位符视觉 */
+.input-unit input::placeholder { color: var(--text-3); font-weight: 500; }
+/* ============================================================
+   关键修复
+   .sheet-mask / .dialog-mask 声明了 display:flex，会覆盖浏览器对
+   [hidden] 的默认规则 display:none —— 两个透明全屏遮罩（z-index 100/200）
+   因此始终盖在界面上，拦截了所有点击。
+   ============================================================ */
+[hidden] { display: none !important; }
+
+/* 遮罩未打开时不拦截点击（兼顾关闭动画的 280ms 窗口） */
+.sheet-mask,
+.dialog-mask { pointer-events: none; }
+.sheet-mask.open,
+.dialog-mask.open { pointer-events: auto; }
+
+/* 可点的 div 区域补 cursor，保证 iOS 上点击识别稳定 */
+.cell,
+.loan-item { cursor: pointer; }
+
+/* ============================== 本月结算（日历页底部） ============================== */
+
+.month-settle {
+  max-width: 560px;
+  margin: 14px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.mini-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+  background: var(--brand-soft);
+  padding: 3px 9px;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 借支多选操作条（内联，不遮挡日历） */
+.loan-batch-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--text-2);
+}
+.loan-batch-actions .spacer { flex: 1 1 auto; }
+.loan-batch-actions button {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--card-2);
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: transform 0.14s ease, opacity 0.14s ease;
+}
+.loan-batch-actions button:active { transform: scale(0.95); }
+.loan-batch-actions button.danger { background: var(--off-soft); color: var(--danger); }
+
+/* ============================== 单日面板：计件 / 计时 ============================== */
+
+.work-block {
+  background: var(--card-2);
+  border-radius: 14px;
+  padding: 10px 12px 4px;
+  margin-bottom: 12px;
+}
+.work-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.work-title { font-size: 12px; color: var(--text-2); font-weight: 600; }
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0;
+}
+.work-field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.work-field > span:first-child {
+  font-size: 11px;
+  color: var(--text-3);
+  padding-left: 2px;
+}
+.work-field .input-unit { width: 100%; }
+.work-field .input-unit input {
+  width: 100%;
+  height: 42px;
+  background: var(--card);
+  border-radius: 10px;
+  text-align: right;
+}
+.work-field .input-unit i { font-size: 11px; min-width: 0; }
+
+/* 只有计件/计时而没有班次时的格子色块 */
+.cell-shift.extra { background: var(--brand-soft); color: var(--brand); }
+
+/* ============================== 借支：选择计入月份 ============================== */
+
+.month-pick {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--card-2);
+  border-radius: 12px;
+  padding: 8px 10px 8px 12px;
+  margin-bottom: 12px;
+}
+.mp-label { font-size: 12px; color: var(--text-2); flex: 0 0 auto; }
+.mp-ctrl { display: flex; align-items: center; gap: 6px; }
+.mp-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--brand);
+  font-size: 17px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+.mp-btn:active { transform: scale(0.92); }
+.mp-value {
+  min-width: 96px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.loan-month {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 7px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+.loan-month:active { opacity: 0.7; }
+
+/* ============================== 账号状态胶囊（右上角） ============================== */
+
+.acct-chip {
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  flex: 0 0 auto;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.14s ease, background 0.16s ease;
+}
+.acct-chip.on { background: var(--brand-soft); color: var(--brand); }
+.acct-chip.wide-name { max-width: 72px; }
+.acct-chip:active { transform: scale(0.94); }
+
+/* ============================== 设置页：账号卡 ============================== */
+
+.acct-state {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--card-2);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+.acct-state.on { color: var(--brand); background: var(--brand-soft); }
+
+.acct-row { display: flex; align-items: center; gap: 10px; padding: 4px 0 12px; }
+.acct-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.acct-main { display: flex; flex-direction: column; min-width: 0; }
+.acct-name {
+  font-size: 15px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.acct-sub {
+  font-size: 11px;
+  color: var(--text-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.acct-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.ghost-btn {
+  height: 40px;
+  border-radius: 11px;
+  background: var(--card-2);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+.ghost-btn.danger { color: var(--danger); background: var(--off-soft); }
+.ghost-btn:active { transform: scale(0.97); opacity: 0.85; }
+
+/* ============================== 云存储卡 ============================== */
+
+/* 置灰仍可点击：点了给「请先登录」提示 */
+.cloud-act.is-locked { opacity: 0.5; }
+.cloud-foot { padding-top: 8px; }
+.list-btn code { font-size: 11px; }
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 2px 2px;
+}
+.switch-label { font-size: 14px; display: flex; flex-direction: column; gap: 2px; }
+.switch-label em { font-style: normal; font-size: 11px; color: var(--text-3); }
+.switch-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 48px; height: 28px;
+  border-radius: 14px;
+  background: var(--line-strong);
+  position: relative;
+  flex: 0 0 auto;
+  transition: background 0.2s ease;
+}
+.switch-input::after {
+  content: "";
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.switch-input:checked { background: var(--brand); }
+.switch-input:checked::after { transform: translateX(20px); }
+
+/* ============================== 登录 / 注册弹层 ============================== */
+
+.auth-tabs {
+  display: flex;
+  gap: 3px;
+  background: var(--card-2);
+  border-radius: 12px;
+  padding: 3px;
+  margin-bottom: 14px;
+}
+.auth-tab {
+  flex: 1 1 0;
+  height: 38px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.auth-tab.active { background: var(--card); color: var(--brand); box-shadow: var(--shadow-sm); }
+.auth-error {
+  margin: 10px 0 0;
+  min-height: 16px;
+  font-size: 12px;
+  color: var(--danger);
+  text-align: center;
+}
+
+/* ============================== 云端历史版本 ============================== */
+
+.hist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--line);
+}
+.hist-item:last-child { border-bottom: 0; }
+.hist-main { flex: 1 1 auto; min-width: 0; }
+.hist-time { font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hist-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+</style>
+</head>
+<body>
+
+<div id="app" class="app">
+
+  <!-- ==================== 第 1 页：日历（含本月结算） ==================== -->
+  <section class="page active" id="page-calendar">
+    <div class="topbar">
+      <div class="topbar-row">
+        <button class="round-btn" id="calPrev" aria-label="上个月">‹</button>
+        <button class="month-title" id="calTitle" title="回到今天">2026年11月</button>
+        <button class="round-btn" id="calNext" aria-label="下个月">›</button>
+        <button class="text-btn" id="calBatch">批量</button>
+        <button class="acct-chip" id="acctChipCal" type="button">游客</button>
+      </div>
+      <div class="summary" id="calSummary"></div>
+      <div class="sync-bar" id="syncBar" hidden></div>
+      <div class="weekdays">
+        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="wk">六</span><span class="wk">日</span>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i class="dot dot-white"></i>白班</span>
+        <span><i class="dot dot-night"></i>晚班</span>
+        <span><i class="dot dot-rest"></i>休息</span>
+        <span><i class="badge badge-off">休</i>法定放假</span>
+        <span><i class="badge badge-work">班</i>调休上班</span>
+      </div>
+
+      <!-- ========== 本月结算：小卡片 + 计件计时 + 借支 ========== -->
+      <div class="month-settle">
+
+        <section class="card month-card" id="calMonthCard"></section>
+
+        <section class="card">
+          <div class="card-head">
+            <h3 class="card-title">本月借支</h3>
+            <div class="head-actions">
+              <button class="link-btn" id="calLnBatch" type="button">多选</button>
+              <button class="primary-sm" id="calAddLoan" type="button">记一笔</button>
+            </div>
+          </div>
+          <div id="calLoanList"></div>
+          <div class="loan-batch-actions" id="calLoanBatchBar" hidden>
+            <span id="calLoanSelCount">已选 0 笔</span>
+            <span class="spacer"></span>
+            <button id="calLoanSelectAll" type="button">全选本月</button>
+            <button class="danger" id="calLoanDeleteSel" type="button">删除选中</button>
+            <button id="calLoanCancel" type="button">取消</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第 2 页：统计 ==================== -->
+  <section class="page" id="page-stats">
+    <div class="topbar">
+      <div class="topbar-row">
+        <button class="round-btn" id="stPrev" aria-label="上个月">‹</button>
+        <button class="month-title" id="stTitle" title="回到本月">2026年11月</button>
+        <button class="round-btn" id="stNext" aria-label="下个月">›</button>
+        <button class="acct-chip" id="acctChipStats" type="button">游客</button>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="content">
+
+        <section class="card">
+          <h3 class="card-title">出勤统计</h3>
+          <div class="stat-grid" id="stAttend"></div>
+        </section>
+
+        <section class="card">
+          <h3 class="card-title">工资明细</h3>
+          <div class="rows" id="stWage"></div>
+        </section>
+
+        <section class="card">
+          <h3 class="card-title">全年概览</h3>
+          <div class="year-list" id="stYear"></div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第 3 页：设置 ==================== -->
+  <section class="page" id="page-settings">
+    <div class="topbar">
+      <div class="topbar-row">
+        <div class="page-heading">设置</div>
+        <button class="acct-chip" id="acctChipSet" type="button">游客</button>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="content">
+
+        <section class="card" id="acctCard">
+          <div class="card-head">
+            <h3 class="card-title">账号</h3>
+            <span class="acct-state" id="acctState">游客模式</span>
+          </div>
+          <div id="acctBody"></div>
+        </section>
+
+        <section class="card">
+          <h3 class="card-title">工资参数</h3>
+          <label class="param-row">
+            <span class="param-name">白班日薪</span>
+            <span class="input-unit"><input type="number" id="pWhitePay" inputmode="decimal" min="0" step="any" /><i>元</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">晚班日薪</span>
+            <span class="input-unit"><input type="number" id="pNightPay" inputmode="decimal" min="0" step="any" /><i>元</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">夜宵补助</span>
+            <span class="input-unit"><input type="number" id="pNightAllow" inputmode="decimal" min="0" step="any" /><i>元/晚</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">房补</span>
+            <span class="input-unit"><input type="number" id="pHousing" inputmode="decimal" min="0" step="any" /><i>元/月</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">全勤奖</span>
+            <span class="input-unit"><input type="number" id="pFullBonus" inputmode="decimal" min="0" step="any" /><i>元/月</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">全勤门槛</span>
+            <span class="input-unit"><input type="number" id="pFullThreshold" inputmode="decimal" min="0" step="1" /><i>天</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">计件单价</span>
+            <span class="input-unit"><input type="number" id="pPiecePrice" inputmode="decimal" min="0" step="any" /><i>元/件</i></span>
+          </label>
+          <label class="param-row">
+            <span class="param-name">时薪</span>
+            <span class="input-unit"><input type="number" id="pHourlyRate" inputmode="decimal" min="0" step="any" /><i>元/时</i></span>
+          </label>
+          <p class="hint">计件单价与时薪是「默认值」，每天记录时不用重复填；某天单价不同可在当天单独改。</p>
+
+        </section>
+
+        <section class="card">
+          <h3 class="card-title">数据管理</h3>
+          <button class="list-btn" id="btnExport" type="button">
+            <span>导出数据</span><span class="list-btn-sub">JSON 备份文件</span>
+          </button>
+          <button class="list-btn" id="btnImport" type="button">
+            <span>导入数据</span><span class="list-btn-sub">从备份恢复</span>
+          </button>
+          <input type="file" id="importFile" accept=".json,application/json" hidden />
+          <button class="list-btn danger" id="btnClear" type="button">
+            <span>清空所有数据</span><span class="list-btn-sub">不可恢复</span>
+          </button>
+          <p class="hint" id="storageHint"></p>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h3 class="card-title">云存储</h3>
+            <span class="mini-tag" id="cloudTag">需登录</span>
+          </div>
+          <div id="cloudBody"></div>
+        </section>
+
+        <section class="card about">
+          <h3 class="card-title">关于本软件</h3>
+          <p><b>工资日历</b> v1.2 · 版本 2026.11</p>
+          <p>一个纯本地运行的班次与工资记账工具：逐日记录白班 / 晚班 / 休息，逐日记录班次，同一天还能记计件数量与计时小时；借支在日历页底部按月登记，自动算出每月应发与实发。</p>
+          <p>· 数据保存在本机浏览器（localStorage），不上传、不联网。</p>
+          <p>· 内置 2026 / 2027 年法定节假日与调休数据，农历与节气由本地算法计算。</p>
+          <p>· 建议在 iPhone Safari 中「分享 → 添加到主屏幕」，即可全屏离线使用。</p>
+          <p>· 更换手机或清理浏览器数据前，请先在设置中导出 JSON 备份。</p>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 底部 Tab（日历 / 统计 / 设置） ==================== -->
+  <nav class="tabbar" id="tabbar">
+    <button class="tab active" data-page="calendar" type="button">
+      <span class="tab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3.2"/><path d="M8 3v4M16 3v4M3 10h18"/><circle cx="8.2" cy="14.6" r="1.05" fill="currentColor" stroke="none"/><circle cx="12" cy="14.6" r="1.05" fill="currentColor" stroke="none"/><circle cx="15.8" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></svg></span>
+      <span class="tab-label">日历</span>
+    </button>
+    <button class="tab" data-page="stats" type="button">
+      <span class="tab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20.5h18"/><path d="M6 20.5V13M12 20.5V7M18 20.5v-5"/></svg></span>
+      <span class="tab-label">统计</span>
+    </button>
+    <button class="tab" data-page="settings" type="button">
+      <span class="tab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5h6.6M14.6 6.5H21M3 12h2.6M10.6 12H21M3 17.5h6.6M14.6 17.5H21"/><circle cx="12" cy="6.5" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="12" cy="17.5" r="2"/></svg></span>
+      <span class="tab-label">设置</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ==================== 日历批量操作条 ==================== -->
+<div class="batchbar" id="batchBar" hidden>
+  <div class="batch-info">
+    <span id="batchCount">已选 0 天</span>
+    <button class="link-btn" id="batchAll" type="button">全选本月</button>
+  </div>
+  <div class="batch-actions" id="batchActions">
+    <button data-act="white" type="button"><i class="dot dot-white"></i>白班</button>
+    <button data-act="night" type="button"><i class="dot dot-night"></i>晚班</button>
+    <button data-act="rest" type="button"><i class="dot dot-rest"></i>休息</button>
+    <button data-act="clear" type="button">清除</button>
+    <button data-act="delete" class="danger" type="button">删除记录</button>
+    <button data-act="cancel" type="button">退出</button>
+  </div>
+</div>
+
+<!-- ==================== 单日操作面板 ==================== -->
+<div class="sheet-mask" id="dayMask" hidden>
+  <div class="sheet" id="daySheet" role="dialog" aria-modal="true" aria-label="记录当天班次">
+    <div class="sheet-grab"></div>
+    <div class="day-head">
+      <div class="day-title" id="dayTitle">11月24日 周二</div>
+      <div class="day-sub" id="daySub">农历十月十六</div>
+      <div class="day-tags" id="dayTags"></div>
+    </div>
+    <div class="day-est" id="dayEst"></div>
+    <div class="shift-btns" id="dayBtns">
+      <button class="shift-btn white" data-type="white" type="button">
+        <span class="sb-name">白班</span><span class="sb-amt">¥200.00</span>
+      </button>
+      <button class="shift-btn night" data-type="night" type="button">
+        <span class="sb-name">晚班</span><span class="sb-amt">¥245.00</span>
+      </button>
+      <button class="shift-btn rest" data-type="rest" type="button">
+        <span class="sb-name">休息</span><span class="sb-amt">¥0.00</span>
+      </button>
+      <button class="shift-btn clear" data-type="clear" type="button">
+        <span class="sb-name">清除</span><span class="sb-amt">—</span>
+      </button>
+    </div>
+    <div class="work-block">
+      <div class="work-head">
+        <span class="work-title">计件 / 计时（可选）</span>
+        <span class="mini-tag" id="dayWorkSum">¥0.00</span>
+      </div>
+      <div class="work-row">
+        <label class="work-field">
+          <span>计件数量</span>
+          <span class="input-unit"><input type="number" id="dayQty" inputmode="decimal" placeholder="0" min="0" step="any" /><i>件</i></span>
+        </label>
+        <label class="work-field">
+          <span>单价</span>
+          <span class="input-unit"><input type="number" id="dayPrice" inputmode="decimal" placeholder="0.00" min="0" step="any" /><i>元/件</i></span>
+        </label>
+      </div>
+      <div class="work-row">
+        <label class="work-field">
+          <span>计时小时</span>
+          <span class="input-unit"><input type="number" id="dayHours" inputmode="decimal" placeholder="0" min="0" step="any" /><i>小时</i></span>
+        </label>
+        <label class="work-field">
+          <span>时薪</span>
+          <span class="input-unit"><input type="number" id="dayRate" inputmode="decimal" placeholder="0.00" min="0" step="any" /><i>元/时</i></span>
+        </label>
+      </div>
+    </div>
+    <label class="field">
+      <span class="field-label">备注（可选）</span>
+      <input type="text" id="dayNote" placeholder="如：加班到10点" maxlength="60" enterkeyhint="done" />
+    </label>
+    <button class="primary-btn" id="daySave" type="button">完成</button>
+  </div>
+</div>
+
+<!-- ==================== 借支弹层 ==================== -->
+<div class="sheet-mask" id="loanMask" hidden>
+  <div class="sheet" id="loanSheet" role="dialog" aria-modal="true" aria-label="记一笔借支">
+    <div class="sheet-grab"></div>
+    <h3 class="sheet-title" id="loanTitle">记一笔借支</h3>
+    <div class="month-pick">
+      <span class="mp-label">计入工资月份</span>
+      <div class="mp-ctrl">
+        <button class="mp-btn" id="loanMonthPrev" type="button" aria-label="上一个月">‹</button>
+        <span class="mp-value" id="loanMonthLabel">2026年11月</span>
+        <button class="mp-btn" id="loanMonthNext" type="button" aria-label="下一个月">›</button>
+      </div>
+    </div>
+    <label class="field">
+      <span class="field-label">日期</span>
+      <input type="date" id="loanDate" />
+    </label>
+    <label class="field">
+      <span class="field-label">金额（元）</span>
+      <input type="number" id="loanAmount" inputmode="decimal" placeholder="0.00" min="0" step="any" />
+    </label>
+    <label class="field">
+      <span class="field-label">备注</span>
+      <input type="text" id="loanNote" placeholder="如：预支生活费" maxlength="30" enterkeyhint="done" />
+    </label>
+    <p class="hint" id="loanHint"></p>
+    <button class="primary-btn" id="loanSave" type="button">保存</button>
+  </div>
+</div>
+
+<!-- ==================== 通用确认弹窗 ==================== -->
+<div class="dialog-mask" id="dialogMask" hidden>
+  <div class="dialog" role="dialog" aria-modal="true">
+    <h3 id="dlgTitle">提示</h3>
+    <p id="dlgMsg"></p>
+    <input type="text" id="dlgInput" class="dlg-input" hidden autocomplete="off" />
+    <div class="dlg-actions">
+      <button id="dlgCancel" type="button">取消</button>
+      <button id="dlgOk" class="danger" type="button">确定</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 登录 / 注册弹层 ==================== -->
+<div class="sheet-mask" id="authMask" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="账号登录">
+    <div class="sheet-grab"></div>
+    <div class="auth-tabs" id="authTabs">
+      <button class="auth-tab active" data-mode="login" type="button">登录</button>
+      <button class="auth-tab" data-mode="register" type="button">注册</button>
+    </div>
+    <label class="field">
+      <span class="field-label">账号</span>
+      <input type="text" id="authAccount" placeholder="手机号 / 昵称 / 邮箱" maxlength="60" autocapitalize="off" autocorrect="off" spellcheck="false" />
+    </label>
+    <label class="field">
+      <span class="field-label">密码</span>
+      <input type="password" id="authPassword" placeholder="至少 6 位" maxlength="40" />
+    </label>
+    <p class="hint" id="authHint"></p>
+    <button class="primary-btn" id="authSubmit" type="button">登录</button>
+    <p class="auth-error" id="authError"></p>
+  </div>
+</div>
+
+<!-- ==================== 修改密码弹层 ==================== -->
+<div class="sheet-mask" id="pwdMask" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="修改密码">
+    <div class="sheet-grab"></div>
+    <h3 class="sheet-title">修改密码</h3>
+    <label class="field">
+      <span class="field-label">新密码</span>
+      <input type="password" id="pwdNew" placeholder="至少 6 位" maxlength="40" />
+    </label>
+    <label class="field">
+      <span class="field-label">确认新密码</span>
+      <input type="password" id="pwdNew2" placeholder="再输一次" maxlength="40" />
+    </label>
+    <p class="hint" id="pwdHint"></p>
+    <button class="primary-btn" id="pwdSave" type="button">保存</button>
+  </div>
+</div>
+
+<!-- ==================== 云端历史版本弹层 ==================== -->
+<div class="sheet-mask" id="histMask" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="云端历史版本">
+    <div class="sheet-grab"></div>
+    <h3 class="sheet-title">云端历史版本</h3>
+    <div id="histList"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   lunar.js · 农历 / 二十四节气 / 法定节假日（纯本地算法，无联网）
+   - 农历：1900-2100 年压缩数据表
+   - 节气：以 1900-01-06 02:05 为基准的分钟偏移公式
+   - 节假日：2026 / 2027 年硬编码（用户提供的数据，逐条落地）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  /* ---------- 农历基础数据（每年 1 项，位编码） ---------- */
+  var lunarInfo = [
+    0x04bd8, 0x04ae0, 0x0a570, 0x054d5, 0x0d260, 0x0d950, 0x16554, 0x056a0, 0x09ad0, 0x055d2, // 1900-1909
+    0x04ae0, 0x0a5b6, 0x0a4d0, 0x0d250, 0x1d255, 0x0b540, 0x0d6a0, 0x0ada2, 0x095b0, 0x14977, // 1910-1919
+    0x04970, 0x0a4b0, 0x0b4b5, 0x06a50, 0x06d40, 0x1ab54, 0x02b60, 0x09570, 0x052f2, 0x04970, // 1920-1929
+    0x06566, 0x0d4a0, 0x0ea50, 0x06e95, 0x05ad0, 0x02b60, 0x186e3, 0x092e0, 0x1c8d7, 0x0c950, // 1930-1939
+    0x0d4a0, 0x1d8a6, 0x0b550, 0x056a0, 0x1a5b4, 0x025d0, 0x092d0, 0x0d2b2, 0x0a950, 0x0b557, // 1940-1949
+    0x06ca0, 0x0b550, 0x15355, 0x04da0, 0x0a5b0, 0x14573, 0x052b0, 0x0a9a8, 0x0e950, 0x06aa0, // 1950-1959
+    0x0aea6, 0x0ab50, 0x04b60, 0x0aae4, 0x0a570, 0x05260, 0x0f263, 0x0d950, 0x05b57, 0x056a0, // 1960-1969
+    0x096d0, 0x04dd5, 0x04ad0, 0x0a4d0, 0x0d4d4, 0x0d250, 0x0d558, 0x0b540, 0x0b6a0, 0x195a6, // 1970-1979
+    0x095b0, 0x049b0, 0x0a974, 0x0a4b0, 0x0b27a, 0x06a50, 0x06d40, 0x0af46, 0x0ab60, 0x09570, // 1980-1989
+    0x04af5, 0x04970, 0x064b0, 0x074a3, 0x0ea50, 0x06b58, 0x055c0, 0x0ab60, 0x096d5, 0x092e0, // 1990-1999
+    0x0c960, 0x0d954, 0x0d4a0, 0x0da50, 0x07552, 0x056a0, 0x0abb7, 0x025d0, 0x092d0, 0x0cab5, // 2000-2009
+    0x0a950, 0x0b4a0, 0x0baa4, 0x0ad50, 0x055d9, 0x04ba0, 0x0a5b0, 0x15176, 0x052b0, 0x0a930, // 2010-2019
+    0x07954, 0x06aa0, 0x0ad50, 0x05b52, 0x04b60, 0x0a6e6, 0x0a4e0, 0x0d260, 0x0ea65, 0x0d530, // 2020-2029
+    0x05aa0, 0x076a3, 0x096d0, 0x04bd7, 0x04ad0, 0x0a4d0, 0x1d0b6, 0x0d250, 0x0d520, 0x0dd45, // 2030-2039
+    0x0b5a0, 0x056d0, 0x055b2, 0x049b0, 0x0a577, 0x0a4b0, 0x0aa50, 0x1b255, 0x06d20, 0x0ada0, // 2040-2049
+    0x14b63, 0x09370, 0x049f8, 0x04970, 0x064b0, 0x168a6, 0x0ea50, 0x06b20, 0x1a6c4, 0x0aae0, // 2050-2059
+    0x0a2e0, 0x0d2e3, 0x0c960, 0x0d557, 0x0d4a0, 0x0da50, 0x05d55, 0x056a0, 0x0a6d0, 0x055d4, // 2060-2069
+    0x052d0, 0x0a9b8, 0x0a950, 0x0b4a0, 0x0b6a6, 0x0ad50, 0x055a0, 0x0aba4, 0x0a5b0, 0x052b0, // 2070-2079
+    0x0b273, 0x06930, 0x07337, 0x06aa0, 0x0ad50, 0x14b55, 0x04b60, 0x0a570, 0x054e4, 0x0d160, // 2080-2089
+    0x0e968, 0x0d520, 0x0daa0, 0x16aa6, 0x056d0, 0x04ae0, 0x0a9d4, 0x0a2d0, 0x0d150, 0x0f252, // 2090-2099
+    0x0d520 // 2100
+  ];
+
+  var MONTH_CN = ['正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '冬', '腊'];
+  var DAY_CN = [
+    '初一', '初二', '初三', '初四', '初五', '初六', '初七', '初八', '初九', '初十',
+    '十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十',
+    '廿一', '廿二', '廿三', '廿四', '廿五', '廿六', '廿七', '廿八', '廿九', '三十'
+  ];
+  var WEEK_CN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+  function leapMonth(y) { return lunarInfo[y - 1900] & 0xf; }
+
+  function leapDays(y) {
+    if (!leapMonth(y)) return 0;
+    return (lunarInfo[y - 1900] & 0x10000) ? 30 : 29;
+  }
+
+  function monthDays(y, m) {
+    return (lunarInfo[y - 1900] & (0x10000 >> m)) ? 30 : 29;
+  }
+
+  function yearDays(y) {
+    var sum = 348;
+    for (var m = 1; m < 13; m++) if (monthDays(y, m) === 30) sum += 1;
+    return sum + leapDays(y);
+  }
+
+  var BASE_UTC = Date.UTC(1900, 0, 31); // 1900-01-31 = 农历 1900 年正月初一
+
+  /**
+   * 公历 → 农历
+   * @returns {{lYear:number,lMonth:number,lDay:number,isLeap:boolean,monthName:string,dayName:string,display:string}}
+   */
+  function solar2lunar(y, m, d) {
+    var offset = Math.round((Date.UTC(y, m - 1, d) - BASE_UTC) / 86400000);
+    var i, temp = 0;
+    for (i = 1900; i < 2101 && offset > 0; i++) {
+      temp = yearDays(i);
+      offset -= temp;
+    }
+    if (offset < 0) { offset += temp; i--; }
+    var lYear = i;
+    var leap = leapMonth(lYear);
+    var isLeap = false;
+    for (i = 1; i < 13 && offset > 0; i++) {
+      if (leap > 0 && i === leap + 1 && !isLeap) {
+        --i; isLeap = true; temp = leapDays(lYear);
+      } else {
+        temp = monthDays(lYear, i);
+      }
+      if (isLeap && i === leap + 1) isLeap = false;
+      offset -= temp;
+    }
+    if (offset === 0 && leap > 0 && i === leap + 1) {
+      if (isLeap) { isLeap = false; } else { isLeap = true; --i; }
+    }
+    if (offset < 0) { offset += temp; --i; }
+
+    var lMonth = i;
+    var lDay = offset + 1;
+    var monthName = (isLeap ? '闰' : '') + MONTH_CN[lMonth - 1] + '月';
+    var dayName = DAY_CN[lDay - 1] || ('廿九');
+    var display = (lDay === 1) ? monthName : dayName;
+
+    return {
+      lYear: lYear, lMonth: lMonth, lDay: lDay, isLeap: isLeap,
+      monthName: monthName, dayName: dayName, display: display,
+      full: monthName + dayName
+    };
+  }
+
+  /* ---------- 二十四节气 ---------- */
+  var TERM_NAMES = [
+    '小寒', '大寒', '立春', '雨水', '惊蛰', '春分', '清明', '谷雨',
+    '立夏', '小满', '芒种', '夏至', '小暑', '大暑', '立秋', '处暑',
+    '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪', '冬至'
+  ];
+  var TERM_INFO = [
+    0, 21208, 42467, 63836, 85337, 107014, 128867, 150921, 173149, 195551, 218072, 240693,
+    263343, 285989, 308563, 331033, 353350, 375494, 397447, 419210, 440795, 462224, 483532, 504758
+  ];
+  var TERM_BASE = Date.UTC(1900, 0, 6, 2, 5);
+  var termCache = {};
+
+  /** 某年节气表：{ '11-7': '立冬', ... } */
+  function termMap(y) {
+    if (termCache[y]) return termCache[y];
+    var map = {};
+    for (var n = 0; n < 24; n++) {
+      var t = TERM_BASE + 31556925974.7 * (y - 1900) + TERM_INFO[n] * 60000;
+      var dt = new Date(t);
+      var m = Math.floor(n / 2) + 1;
+      map[m + '-' + dt.getUTCDate()] = TERM_NAMES[n];
+    }
+    termCache[y] = map;
+    return map;
+  }
+
+  /* ---------- 农历节日 ---------- */
+  var LUNAR_FEST = {
+    '1-1': '春节', '1-15': '元宵节', '2-2': '龙抬头', '5-5': '端午节',
+    '7-7': '七夕节', '7-15': '中元节', '8-15': '中秋节', '9-9': '重阳节',
+    '12-8': '腊八节', '12-23': '小年'
+  };
+
+  /* ---------- 法定节假日 / 调休（硬编码） ---------- */
+  var HOLIDAY_RAW = [
+    /* 2026 */
+    ['2026', '元旦', '2026-01-01', '2026-01-03', ['2026-01-04']],
+    ['2026', '春节', '2026-02-15', '2026-02-23', ['2026-02-14', '2026-02-28']],
+    ['2026', '清明', '2026-04-04', '2026-04-06', []],
+    ['2026', '劳动节', '2026-05-01', '2026-05-05', ['2026-05-09']],
+    ['2026', '端午', '2026-06-19', '2026-06-21', []],
+    ['2026', '中秋', '2026-09-25', '2026-09-27', []],
+    ['2026', '国庆', '2026-10-01', '2026-10-07', ['2026-09-20', '2026-10-10']],
+    /* 2027 */
+    ['2027', '元旦', '2027-01-01', '2027-01-03', []],
+    ['2027', '春节', '2027-02-05', '2027-02-13', ['2027-01-31', '2027-02-14']],
+    ['2027', '清明', '2027-04-03', '2027-04-05', []],
+    ['2027', '劳动节', '2027-05-01', '2027-05-05', ['2027-05-08']],
+    ['2027', '端午', '2027-06-09', '2027-06-09', []],
+    ['2027', '中秋', '2027-09-15', '2027-09-15', []],
+    ['2027', '国庆', '2027-10-01', '2027-10-07', ['2027-09-26', '2027-10-09']]
+  ];
+
+  var HOLIDAY_MAP = {}; // 'YYYY-MM-DD' → { off:boolean, work:boolean, name:string }
+
+  function parseISO(s) {
+    var p = s.split('-');
+    return Date.UTC(+p[0], +p[1] - 1, +p[2]);
+  }
+  function isoOf(utc) {
+    var d = new Date(utc);
+    var m = String(d.getUTCMonth() + 1);
+    var day = String(d.getUTCDate());
+    return d.getUTCFullYear() + '-' + (m.length < 2 ? '0' + m : m) + '-' + (day.length < 2 ? '0' + day : day);
+  }
+
+  (function buildHolidayMap() {
+    for (var i = 0; i < HOLIDAY_RAW.length; i++) {
+      var name = HOLIDAY_RAW[i][1];
+      var from = parseISO(HOLIDAY_RAW[i][2]);
+      var to = parseISO(HOLIDAY_RAW[i][3]);
+      var works = HOLIDAY_RAW[i][4] || [];
+      for (var t = from; t <= to; t += 86400000) {
+        HOLIDAY_MAP[isoOf(t)] = { off: true, work: false, name: name };
+      }
+      for (var w = 0; w < works.length; w++) {
+        HOLIDAY_MAP[works[w]] = { off: false, work: true, name: name };
+      }
+    }
+  })();
+
+  /** 农历月的天数（非闰月） */
+  function lunarMonthDays(y, m) { return monthDays(y, m); }
+
+  function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
+  /**
+   * 某一天的完整展示信息
+   * 名称优先级：法定节日 > 节气 > 农历节日
+   */
+  function dayInfo(y, m, d) {
+    var dateStr = y + '-' + pad2(m) + '-' + pad2(d);
+    var lunar = solar2lunar(y, m, d);
+    var term = termMap(y)[m + '-' + d] || '';
+
+    var lunarFest = '';
+    if (!lunar.isLeap) {
+      if (lunar.lMonth === 12 && lunar.lDay === lunarMonthDays(lunar.lYear, 12)) {
+        lunarFest = '除夕';
+      } else {
+        lunarFest = LUNAR_FEST[lunar.lMonth + '-' + lunar.lDay] || '';
+      }
+    }
+
+    var hd = HOLIDAY_MAP[dateStr] || null;
+    var off = !!(hd && hd.off);
+    var work = !!(hd && hd.work);
+    var holidayName = off ? hd.name : '';
+
+    var name = holidayName || term || lunarFest;
+    var nameType = holidayName ? 'holiday' : (term ? 'term' : (lunarFest ? 'lunar' : ''));
+
+    return {
+      y: y, m: m, d: d, dateStr: dateStr,
+      weekday: new Date(y, m - 1, d).getDay(),
+      weekdayName: WEEK_CN[new Date(y, m - 1, d).getDay()],
+      lunar: lunar,
+      term: term,
+      lunarFest: lunarFest,
+      holidayName: holidayName,
+      off: off,
+      work: work,
+      name: name,
+      nameType: nameType
+    };
+  }
+
+  function daysInMonth(y, m) { return new Date(y, m, 0).getDate(); }
+
+  /** 某年是否有内置节假日数据 */
+  function hasHolidayData(year) {
+    for (var i = 0; i < HOLIDAY_RAW.length; i++) if (HOLIDAY_RAW[i][0] === String(year)) return true;
+    return false;
+  }
+
+  global.GC = global.GC || {};
+  global.GC.lunar = {
+    solar2lunar: solar2lunar,
+    dayInfo: dayInfo,
+    daysInMonth: daysInMonth,
+    weekName: function (i) { return WEEK_CN[i]; },
+    hasHolidayData: hasHolidayData,
+    pad2: pad2
+  };
+})(window);
+</script>
+<script>
+/* ============================================================
+   store.js · 数据层（localStorage）+ 工资计算引擎
+   数据模型：
+   {
+     version: 2,
+     settings: { whitePay, nightPay, nightAllowance, housingAllow, fullBonus,
+                 fullThreshold, pieceUnitPrice, hourlyRate },
+     records:  { 'YYYY-MM-DD': { type, note, qty, price, hours, rate } },
+     loans:    [ { id, date, month, amount, note, createdAt } ]
+   }
+   计件 / 计时按「天」记录：每天可填计件数量与计时小时，
+   单价 / 时薪缺省取设置里的默认值，也可当天单独填。
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  var KEY = 'wagecal.data.v2';
+  var OLD_KEY = 'wagecal.data.v1';
+
+  var DEFAULT_SETTINGS = {
+    whitePay: 200,
+    nightPay: 230,
+    nightAllowance: 15,
+    housingAllow: 300,
+    fullBonus: 200,
+    fullThreshold: 26,
+    pieceUnitPrice: 1,      /* 默认计件单价（元/件） */
+    hourlyRate: 20          /* 默认时薪（元/小时） */
+  };
+
+  var state = null;
+  var storageOK = true;
+  var listeners = [];
+
+  /* ---------------- 工具 ---------------- */
+
+  function pad2(n) { return n < 10 ? '0' + n : String(n); }
+  function uid() { return 'l' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  function num(v) { var n = Number(v); return isFinite(n) ? n : 0; }
+  function round2(v) { var n = Number(v); if (!isFinite(n)) n = 0; return Math.round((n + Number.EPSILON) * 100) / 100; }
+  function toDateStr(d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+  function todayStr() { return toDateStr(new Date()); }
+  function monthKey(y, m) { return y + '-' + pad2(m); }
+  function monthOfDate(dateStr) { return String(dateStr).slice(0, 7); }
+
+  function money(v) {
+    var n = round2(v);
+    var neg = n < 0;
+    var s = Math.abs(n).toFixed(2).split('.');
+    s[0] = s[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return (neg ? '-' : '') + s[0] + '.' + s[1];
+  }
+  function yuan(v) { return '¥' + money(v); }
+  function compact(v) {
+    var n = round2(v);
+    return Number.isInteger(n) ? String(n) : n.toFixed(2);
+  }
+
+  /* ---------------- 初始化 / 存取 ---------------- */
+
+  function blank() {
+    return {
+      version: 2,
+      settings: Object.assign({}, DEFAULT_SETTINGS),
+      records: {},
+      loans: []
+    };
+  }
+
+  function normalize(d) {
+    var s = blank();
+    if (!d || typeof d !== 'object') return s;
+
+    if (d.settings && typeof d.settings === 'object') {
+      Object.keys(DEFAULT_SETTINGS).forEach(function (k) {
+        if (d.settings[k] !== undefined && d.settings[k] !== null && d.settings[k] !== '') {
+          s.settings[k] = num(d.settings[k]);
+        }
+      });
+    }
+
+    if (d.records && typeof d.records === 'object') {
+      Object.keys(d.records).forEach(function (k) {
+        var r = d.records[k];
+        if (!r || typeof r !== 'object') return;
+        var type = r.type;
+        if (type !== 'white' && type !== 'night' && type !== 'rest') type = '';
+        var note = typeof r.note === 'string' ? r.note : '';
+        var qty = num(r.qty) > 0 ? num(r.qty) : 0;
+        var hours = num(r.hours) > 0 ? num(r.hours) : 0;
+        var price = qty > 0 ? Math.max(0, num(r.price)) : 0;
+        var rate = hours > 0 ? Math.max(0, num(r.rate)) : 0;
+        if (!type && !note && !qty && !hours) return;   /* 空记录不保留 */
+        s.records[k] = { type: type, note: note, qty: qty, price: price, hours: hours, rate: rate };
+      });
+    }
+
+    if (Array.isArray(d.loans)) {
+      d.loans.forEach(function (l) {
+        if (!l || !l.date) return;
+        var amt = num(l.amount);
+        if (!isFinite(amt)) return;
+        s.loans.push({
+          id: l.id || uid(),
+          date: String(l.date).slice(0, 10),
+          month: l.month && /^\d{4}-\d{2}$/.test(l.month) ? l.month : monthOfDate(l.date),
+          amount: round2(amt),
+          note: typeof l.note === 'string' ? l.note : '',
+          createdAt: l.createdAt || Date.now()
+        });
+      });
+    }
+    return s;
+  }
+
+  function load() {
+    try {
+      var raw = global.localStorage.getItem(KEY);
+      if (!raw) raw = global.localStorage.getItem(OLD_KEY);   /* v1 数据自动升级 */
+      if (!raw) return blank();
+      return normalize(JSON.parse(raw));
+    } catch (e) {
+      storageOK = false;
+      return blank();
+    }
+  }
+
+  function save() {
+    try {
+      global.localStorage.setItem(KEY, JSON.stringify(state));
+      storageOK = true;
+    } catch (e) {
+      storageOK = false;
+    }
+    emit();
+  }
+
+  function emit() {
+    for (var i = 0; i < listeners.length; i++) {
+      try { listeners[i](); } catch (e) { /* 单个订阅出错不影响其他 */ }
+    }
+  }
+
+  function onChange(fn) { if (typeof fn === 'function') listeners.push(fn); }
+
+  /* ---------------- 班次 / 计件 / 计时 ---------------- */
+
+  function getRecord(dateStr) {
+    return state.records[dateStr] || null;
+  }
+
+  function getType(dateStr) {
+    var r = state.records[dateStr];
+    return r ? r.type : '';
+  }
+
+  function setType(dateStr, type) {
+    var rec = state.records[dateStr];
+    if (type === 'clear') {
+      if (!rec) return false;
+      rec.type = '';
+      if (!rec.note && !rec.qty && !rec.hours) delete state.records[dateStr];
+      save();
+      return true;
+    }
+    if (type !== 'white' && type !== 'night' && type !== 'rest') return false;
+    if (rec) {
+      rec.type = type;
+    } else {
+      state.records[dateStr] = { type: type, note: '', qty: 0, price: 0, hours: 0, rate: 0 };
+    }
+    save();
+    return true;
+  }
+
+  function setNote(dateStr, note) {
+    var rec = state.records[dateStr];
+    var text = String(note || '').slice(0, 60);
+    if (!rec) {
+      if (!text) return;
+      state.records[dateStr] = { type: '', note: text, qty: 0, price: 0, hours: 0, rate: 0 };
+    } else {
+      rec.note = text;
+      if (!rec.type && !rec.note && !rec.qty && !rec.hours) delete state.records[dateStr];
+    }
+    save();
+  }
+
+  /** 记录某天的计件数量与计时小时（单价/时薪填 0 时按设置默认值计算） */
+  function setWork(dateStr, w) {
+    var qty = Math.max(0, num(w.qty));
+    var hours = Math.max(0, num(w.hours));
+    var price = qty > 0 ? Math.max(0, num(w.price)) : 0;
+    var rate = hours > 0 ? Math.max(0, num(w.rate)) : 0;
+
+    var rec = state.records[dateStr];
+    if (!rec) {
+      if (!qty && !hours) return;
+      state.records[dateStr] = { type: '', note: '', qty: qty, price: price, hours: hours, rate: rate };
+    } else {
+      rec.qty = qty; rec.price = price; rec.hours = hours; rec.rate = rate;
+      if (!rec.type && !rec.note && !rec.qty && !rec.hours) delete state.records[dateStr];
+    }
+    save();
+  }
+
+  function removeRecord(dateStr) {
+    if (!state.records[dateStr]) return false;
+    delete state.records[dateStr];
+    save();
+    return true;
+  }
+
+  /** 班次日薪（不含计件 / 计时） */
+  function dayPay(type) {
+    var s = state.settings;
+    if (type === 'white') return round2(num(s.whitePay));
+    if (type === 'night') return round2(num(s.nightPay) + num(s.nightAllowance));
+    return 0;
+  }
+
+  /** 某天的工资构成：班次 + 计件 + 计时 */
+  function dayBreakdown(dateStr) {
+    var s = state.settings;
+    var r = state.records[dateStr];
+    var shift = r ? dayPay(r.type) : 0;
+    var piece = 0, hourly = 0;
+    if (r) {
+      var price = num(r.price) > 0 ? num(r.price) : num(s.pieceUnitPrice);
+      var rate = num(r.rate) > 0 ? num(r.rate) : num(s.hourlyRate);
+      piece = round2(num(r.qty) * price);
+      hourly = round2(num(r.hours) * rate);
+    }
+    return { shift: shift, piece: piece, hourly: hourly, total: round2(shift + piece + hourly) };
+  }
+
+  /* ---------------- 借支 ---------------- */
+
+  function getLoans(mk) {
+    var list = state.loans.slice();
+    if (mk) list = list.filter(function (l) { return l.month === mk; });
+    return list.sort(function (a, b) {
+      if (a.date === b.date) return (b.createdAt || 0) - (a.createdAt || 0);
+      return a.date < b.date ? 1 : -1;
+    });
+  }
+
+  /** 记一笔借支；month 可指定从哪个月的工资里扣（默认取 date 所在月） */
+  function addLoan(dateStr, amount, note, month) {
+    var amt = round2(amount);
+    if (!isFinite(amt) || amt <= 0) return null;
+    var mk = (month && /^\d{4}-\d{2}$/.test(month)) ? month : monthOfDate(dateStr);
+    var l = {
+      id: uid(),
+      date: dateStr,
+      month: mk,
+      amount: amt,
+      note: String(note || '').slice(0, 30),
+      createdAt: Date.now()
+    };
+    state.loans.push(l);
+    save();
+    return l;
+  }
+
+  /** 修改已有借支（可改日期、金额、备注、扣除月份） */
+  function updateLoan(id, patch) {
+    var l = null;
+    for (var i = 0; i < state.loans.length; i++) {
+      if (state.loans[i].id === id) { l = state.loans[i]; break; }
+    }
+    if (!l) return null;
+    if (patch.date && /^\d{4}-\d{2}-\d{2}$/.test(patch.date)) l.date = patch.date;
+    if (patch.month && /^\d{4}-\d{2}$/.test(patch.month)) l.month = patch.month;
+    if (patch.amount !== undefined) {
+      var a = round2(patch.amount);
+      if (isFinite(a) && a > 0) l.amount = a;
+    }
+    if (patch.note !== undefined) l.note = String(patch.note || '').slice(0, 30);
+    save();
+    return l;
+  }
+
+  function removeLoan(id) {
+    var before = state.loans.length;
+    state.loans = state.loans.filter(function (l) { return l.id !== id; });
+    if (state.loans.length !== before) { save(); return true; }
+    return false;
+  }
+
+  function removeLoans(ids) {
+    var set = {};
+    ids.forEach(function (i) { set[i] = 1; });
+    var before = state.loans.length;
+    state.loans = state.loans.filter(function (l) { return !set[l.id]; });
+    if (state.loans.length !== before) { save(); return before - state.loans.length; }
+    return 0;
+  }
+
+  function loanTotal(mk) {
+    return round2(getLoans(mk).reduce(function (s, l) { return s + num(l.amount); }, 0));
+  }
+
+  /* ---------------- 工资计算 ---------------- */
+
+  /**
+   * 计件工资 = Σ(当天计件数量 × 单价)
+   * 计时工资 = Σ(当天计时小时 × 时薪)
+   * 白班工资 = 白班天数 × 白班日薪
+   * 晚班工资 = 晚班天数 × 晚班日薪
+   * 夜宵补助 = 晚班天数 × 每晚夜宵补助
+   * 房补     = 当月出勤（白+晚）≥ 1 天 ? 全额 : 0
+   * 全勤奖   = 当月出勤 ≥ 全勤门槛 ? 全额 : 0
+   * 应发     = 计件 + 计时 + 白班 + 晚班 + 夜宵 + 房补 + 全勤
+   * 实发     = 应发 − 当月借支合计
+   */
+  function calcMonth(mk) {
+    var parts = String(mk).split('-');
+    var y = +parts[0], m = +parts[1];
+    var dim = new Date(y, m, 0).getDate();
+    var s = state.settings;
+    var white = 0, night = 0, rest = 0, recorded = 0;
+    var piecePay = 0, hourlyPay = 0, totalQty = 0, totalHours = 0;
+
+    for (var d = 1; d <= dim; d++) {
+      var r = state.records[mk + '-' + pad2(d)];
+      if (!r) continue;
+      if (r.type) recorded++;
+      if (r.type === 'white') white++;
+      else if (r.type === 'night') night++;
+      else if (r.type === 'rest') rest++;
+
+      var qty = num(r.qty), hours = num(r.hours);
+      if (qty > 0) {
+        var price = num(r.price) > 0 ? num(r.price) : num(s.pieceUnitPrice);
+        piecePay += qty * price;
+        totalQty += qty;
+      }
+      if (hours > 0) {
+        var rate = num(r.rate) > 0 ? num(r.rate) : num(s.hourlyRate);
+        hourlyPay += hours * rate;
+        totalHours += hours;
+      }
+    }
+
+    var attendance = white + night;
+    piecePay = round2(piecePay);
+    hourlyPay = round2(hourlyPay);
+    totalQty = round2(totalQty);
+    totalHours = round2(totalHours);
+
+    var whitePay = round2(white * num(s.whitePay));
+    var nightPay = round2(night * num(s.nightPay));
+    var allowance = round2(night * num(s.nightAllowance));
+    var housing = attendance >= 1 ? round2(num(s.housingAllow)) : 0;
+    var fullBonus = attendance >= num(s.fullThreshold) ? round2(num(s.fullBonus)) : 0;
+    var gross = round2(piecePay + hourlyPay + whitePay + nightPay + allowance + housing + fullBonus);
+    var loan = loanTotal(mk);
+    var net = round2(gross - loan);
+
+    return {
+      month: mk,
+      year: y,
+      monthNum: m,
+      days: dim,
+      white: white,
+      night: night,
+      rest: rest,
+      recorded: recorded,
+      attendance: attendance,
+      allowanceCount: night,
+      totalQty: totalQty,
+      totalHours: totalHours,
+      piecePay: piecePay,
+      hourlyPay: hourlyPay,
+      whitePay: whitePay,
+      nightPay: nightPay,
+      allowance: allowance,
+      housing: housing,
+      fullBonus: fullBonus,
+      fullThreshold: num(s.fullThreshold),
+      fullReached: attendance >= num(s.fullThreshold),
+      gross: gross,
+      loan: loan,
+      net: net
+    };
+  }
+
+  function calcYear(year) {
+    var list = [];
+    for (var m = 1; m <= 12; m++) list.push(calcMonth(monthKey(year, m)));
+    return list;
+  }
+
+  /* ---------------- 导入 / 导出 / 清空 ---------------- */
+
+  function exportObject() {
+    return {
+      app: 'wage-calendar',
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      data: {
+        settings: state.settings,
+        records: state.records,
+        loans: state.loans
+      }
+    };
+  }
+
+  function importObject(obj) {
+    var d = obj && obj.data ? obj.data : obj;
+    if (!d || typeof d !== 'object') throw new Error('文件内容不是有效的 JSON 对象');
+    if (!d.settings && !d.records && !d.loans) throw new Error('找不到可恢复的数据');
+    state = normalize(d);
+    save();
+    return state;
+  }
+
+  function clearAll() {
+    state = blank();
+    save();
+  }
+
+  function getSettings() { return state.settings; }
+
+  function setSetting(key, value) {
+    if (!(key in DEFAULT_SETTINGS)) return;
+    state.settings[key] = num(value);
+    save();
+  }
+
+  state = load();
+  save();   /* 首次打开即写入默认设置（预置默认值） */
+
+  global.GC = global.GC || {};
+  global.GC.store = {
+    DEFAULT_SETTINGS: DEFAULT_SETTINGS,
+    onChange: onChange,
+    getState: function () { return state; },
+    isStorageOK: function () { return storageOK; },
+    getSettings: getSettings,
+    setSetting: setSetting,
+
+    getRecord: getRecord,
+    getType: getType,
+    setType: setType,
+    setNote: setNote,
+    setWork: setWork,
+    removeRecord: removeRecord,
+    dayPay: dayPay,
+    dayBreakdown: dayBreakdown,
+
+    getLoans: getLoans,
+    addLoan: addLoan,
+    updateLoan: updateLoan,
+    removeLoan: removeLoan,
+    removeLoans: removeLoans,
+    loanTotal: loanTotal,
+
+    calcMonth: calcMonth,
+    calcYear: calcYear,
+
+    exportObject: exportObject,
+    importObject: importObject,
+    clearAll: clearAll,
+
+    money: money,
+    yuan: yuan,
+    compact: compact,
+    round2: round2,
+    monthKey: monthKey,
+    monthOfDate: monthOfDate,
+    todayStr: todayStr,
+    pad2: pad2
+  };
+})(window);
+</script>
+<script>
+/* ============================================================
+   ui.js · 通用交互（toast / 底部弹层 / 确认弹窗 / 格式化）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  function byId(id) { return document.getElementById(id); }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  /* ---------------- Toast ---------------- */
+
+  var toastTimer = null;
+
+  function toast(msg, duration) {
+    var t = byId('toast');
+    if (!t) return;
+    t.textContent = String(msg || '');
+    t.classList.add('show');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      t.classList.remove('show');
+      toastTimer = null;
+    }, duration || 1800);
+  }
+
+  /* ---------------- 底部弹层 ---------------- */
+
+  function openSheet(mask) {
+    if (!mask) return;
+    mask.hidden = false;
+    mask.classList.remove('open');
+    void mask.offsetHeight; /* 强制回流，确保过渡生效 */
+    mask.classList.add('open');
+  }
+
+  function closeSheet(mask) {
+    if (!mask) return;
+    mask.classList.remove('open');
+    setTimeout(function () { mask.hidden = true; }, 280);
+  }
+
+  /* ---------------- 确认弹窗 ---------------- */
+
+  function confirmDialog(opts) {
+    opts = opts || {};
+    return new Promise(function (resolve) {
+      var mask = byId('dialogMask');
+      var title = byId('dlgTitle');
+      var msg = byId('dlgMsg');
+      var input = byId('dlgInput');
+      var ok = byId('dlgOk');
+      var cancel = byId('dlgCancel');
+      var settled = false;
+
+      function finish(v) {
+        if (settled) return;
+        settled = true;
+        mask.classList.remove('open');
+        setTimeout(function () { mask.hidden = true; }, 220);
+        resolve(v);
+      }
+
+      title.textContent = opts.title || '提示';
+      msg.textContent = opts.message || '';
+      msg.hidden = !opts.message;
+      ok.textContent = opts.okText || '确定';
+      ok.className = opts.tone === 'danger' ? 'danger' : 'primary';
+      cancel.textContent = opts.cancelText || '取消';
+
+      if (opts.requireText) {
+        input.hidden = false;
+        input.value = '';
+        input.placeholder = '请输入「' + opts.requireText + '」';
+      } else {
+        input.hidden = true;
+      }
+
+      mask.hidden = false;
+      mask.classList.remove('open');
+      void mask.offsetHeight;
+      mask.classList.add('open');
+      if (opts.requireText) setTimeout(function () { input.focus(); }, 260);
+
+      ok.onclick = function () {
+        if (opts.requireText && input.value.trim() !== opts.requireText) {
+          toast('请输入「' + opts.requireText + '」后再继续', 2000);
+          input.focus();
+          return;
+        }
+        finish(true);
+      };
+      cancel.onclick = function () { finish(false); };
+      mask.onclick = function (e) { if (e.target === mask) finish(false); };
+      if (opts.requireText) {
+        input.onkeydown = function (e) { if (e.key === 'Enter') ok.click(); };
+      }
+    });
+  }
+
+  global.GC = global.GC || {};
+  global.GC.ui = {
+    byId: byId,
+    esc: esc,
+    toast: toast,
+    openSheet: openSheet,
+    closeSheet: closeSheet,
+    confirm: confirmDialog
+  };
+})(window);
+</script>
+<script>
+/* ============================================================
+   calendar.js · 第 1 页：日历
+   月视图 + 单日面板（班次 / 计件 / 计时 / 备注）+ 班次批量
+   + 本月结算（借支小卡片与借支列表）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  var S = global.GC.store;
+  var L = global.GC.lunar;
+  var UI = global.GC.ui;
+
+  var view = { y: 2026, m: 1 };
+  var batch = false;          /* 班次批量 */
+  var selected = {};          /* dateStr → true */
+  var sheetDate = '';         /* 当前打开面板的日期 */
+
+  var lnBatch = false;        /* 借支多选 */
+  var lnSelected = {};        /* loanId → true */
+  var workTimer = null;
+
+  var TYPE_NAME = { white: '白班', night: '晚班', rest: '休息' };
+  var TYPE_SHORT = { white: '白', night: '晚', rest: '休' };
+
+  function byId(id) { return document.getElementById(id); }
+  function curMonth() { return S.monthKey(view.y, view.m); }
+
+  function readNum(id) {
+    var el = byId(id);
+    if (!el) return 0;
+    var v = Number(el.value);
+    return (isFinite(v) && v > 0) ? v : 0;
+  }
+
+  function setInput(id, v) {
+    var el = byId(id);
+    if (!el || document.activeElement === el) return;
+    var cur = el.value === '' ? 0 : Number(el.value);
+    if (Math.abs(cur - v) < 1e-9) return;
+    el.value = v ? String(v) : '';
+  }
+
+  /* ============================================================ 初始化 */
+
+  function init() {
+    var now = new Date();
+    view.y = now.getFullYear();
+    view.m = now.getMonth() + 1;
+
+    byId('calPrev').addEventListener('click', function () { shiftMonth(-1); });
+    byId('calNext').addEventListener('click', function () { shiftMonth(1); });
+    byId('calTitle').addEventListener('click', gotoToday);
+    byId('calBatch').addEventListener('click', toggleBatch);
+
+    byId('calGrid').addEventListener('click', onGridClick);
+    byId('batchAll').addEventListener('click', selectAllMonth);
+    byId('batchActions').addEventListener('click', onBatchAction);
+
+    byId('dayBtns').addEventListener('click', onShiftClick);
+    byId('daySave').addEventListener('click', function () {
+      saveDaySheet();
+      UI.closeSheet(byId('dayMask'));
+    });
+    byId('dayMask').addEventListener('click', function (e) {
+      if (e.target === byId('dayMask')) {
+        saveDaySheet();
+        UI.closeSheet(byId('dayMask'));
+      }
+    });
+
+    /* 当天的计件 / 计时输入：即时预览，400ms 后自动保存 */
+    ['dayQty', 'dayPrice', 'dayHours', 'dayRate'].forEach(function (id) {
+      var el = byId(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        updateDayCalc();
+        if (workTimer) clearTimeout(workTimer);
+        workTimer = setTimeout(saveWork, 400);
+      });
+      el.addEventListener('change', function () {
+        updateDayCalc();
+        if (workTimer) clearTimeout(workTimer);
+        saveWork();
+      });
+    });
+
+    /* 本月借支 */
+    byId('calAddLoan').addEventListener('click', function () {
+      global.GC.loanSheet.open(S.todayStr());
+    });
+    byId('calLoanList').addEventListener('click', onLoanListClick);
+    byId('calLnBatch').addEventListener('click', toggleLoanBatch);
+    byId('calLoanSelectAll').addEventListener('click', selectAllLoans);
+    byId('calLoanDeleteSel').addEventListener('click', deleteSelectedLoans);
+    byId('calLoanCancel').addEventListener('click', exitLoanBatch);
+  }
+
+  /* ============================================================ 月份切换 */
+
+  function shiftMonth(delta) {
+    var m = view.m + delta;
+    var y = view.y;
+    if (m < 1) { m = 12; y -= 1; }
+    if (m > 12) { m = 1; y += 1; }
+    if (y < 1901) { y = 1901; m = 1; }
+    if (y > 2100) { y = 2100; m = 12; }
+    view.y = y;
+    view.m = m;
+    selected = {};
+    lnSelected = {};
+    render();
+  }
+
+  function gotoToday() {
+    var now = new Date();
+    if (view.y === now.getFullYear() && view.m === now.getMonth() + 1) {
+      UI.toast('已经是本月了');
+      return;
+    }
+    view.y = now.getFullYear();
+    view.m = now.getMonth() + 1;
+    selected = {};
+    lnSelected = {};
+    render();
+    UI.toast('已回到今天');
+  }
+
+  function render() {
+    if (!byId('calGrid')) return;
+    byId('calTitle').textContent = view.y + '年' + view.m + '月';
+    byId('calBatch').textContent = batch ? '退出' : '批量';
+    byId('calBatch').classList.toggle('on', batch);
+
+    byId('calGrid').innerHTML = buildGrid();
+    buildSummary();
+    updateBatchBar();
+    renderSettle();
+
+    if (sheetDate && byId('dayMask').hidden === false) renderDaySheet(sheetDate);
+  }
+
+  /* ============================================================ 日历网格 */
+
+  function buildGrid() {
+    var y = view.y, m = view.m;
+    var dim = L.daysInMonth(y, m);
+    var lead = (new Date(y, m - 1, 1).getDay() + 6) % 7;  /* 周一为 0 */
+    var total = Math.ceil((lead + dim) / 7) * 7;
+    var today = S.todayStr();
+    var prevY = m === 1 ? y - 1 : y;
+    var prevM = m === 1 ? 12 : m - 1;
+    var prevDim = L.daysInMonth(prevY, prevM);
+    var html = [];
+
+    for (var i = 0; i < total; i++) {
+      var dayNum = i - lead + 1;
+      if (dayNum < 1) {
+        html.push('<div class="cell muted"><div class="cell-top"><span class="dnum">' + (prevDim + dayNum) + '</span></div></div>');
+        continue;
+      }
+      if (dayNum > dim) {
+        html.push('<div class="cell muted"><div class="cell-top"><span class="dnum">' + (dayNum - dim) + '</span></div></div>');
+        continue;
+      }
+      html.push(cellHtml(y, m, dayNum, today));
+    }
+    return html.join('');
+  }
+
+  function cellHtml(y, m, d, today) {
+    var info = L.dayInfo(y, m, d);
+    var ds = info.dateStr;
+    var type = S.getType(ds);
+    var rec = S.getRecord(ds);
+    var bd = S.dayBreakdown(ds);
+
+    var cls = 'cell';
+    if (ds === today) cls += ' today';
+    if (batch && selected[ds]) cls += ' sel';
+
+    var badge = info.off
+      ? '<i class="badge badge-off">休</i>'
+      : (info.work ? '<i class="badge badge-work">班</i>' : '');
+
+    var noteDot = (rec && rec.note) ? '<span class="note-dot"></span>' : '';
+
+    var festCls = info.nameType === 'term' ? ' term'
+      : (info.nameType === 'lunar' ? ' lunar-fest' : '');
+
+    var chip;
+    if (type || bd.total > 0) {
+      var kind = type || 'extra';
+      var label = type ? TYPE_SHORT[type] : '计';
+      chip = '<div class="cell-shift ' + kind + '">' + label +
+        '<span class="amt">¥' + S.compact(bd.total) + '</span></div>';
+    } else {
+      chip = '<div class="cell-shift placeholder">—</div>';
+    }
+
+    return '<div class="' + cls + '" data-date="' + ds + '">' +
+      '<div class="cell-top"><span class="dnum">' + d + noteDot + '</span>' + badge + '</div>' +
+      '<div class="cell-lunar">' + info.lunar.display + '</div>' +
+      '<div class="cell-fest' + festCls + '">' + UI.esc(info.name) + '</div>' +
+      chip +
+      '</div>';
+  }
+
+  function buildSummary() {
+    var stat = S.calcMonth(curMonth());
+    byId('calSummary').innerHTML =
+      '<div class="sum-cell"><span class="sum-num">' + stat.white + '</span><span class="sum-label">白班 · 天</span></div>' +
+      '<div class="sum-cell"><span class="sum-num">' + stat.night + '</span><span class="sum-label">晚班 · 天</span></div>' +
+      '<div class="sum-cell"><span class="sum-num">' + stat.rest + '</span><span class="sum-label">休息 · 天</span></div>' +
+      '<div class="sum-cell"><span class="sum-num money">' + S.yuan(stat.net) + '</span><span class="sum-label">本月实发</span></div>';
+  }
+
+  /* ============================================================ 本月结算 */
+
+  function renderSettle() {
+    var mk = curMonth();
+    var stat = S.calcMonth(mk);
+    var left = S.round2(stat.gross - stat.loan);
+
+    byId('calMonthCard').innerHTML =
+      '<div class="mc-item loan"><span class="mc-k">本月借支合计</span><span class="mc-v">-' + S.money(stat.loan) + '</span></div>' +
+      '<div class="mc-item due"><span class="mc-k">本月应发</span><span class="mc-v">' + S.money(stat.gross) + '</span></div>' +
+      '<div class="mc-item left' + (left < 0 ? ' negative' : '') + '"><span class="mc-k">当月剩余</span><span class="mc-v">' + S.money(left) + '</span></div>';
+
+    renderLoanList(mk);
+  }
+
+  function renderLoanList(mk) {
+    var loans = S.getLoans(mk);
+
+    byId('calLnBatch').textContent = lnBatch ? '退出多选' : '多选';
+    byId('calLnBatch').classList.toggle('on', lnBatch);
+    byId('calLoanBatchBar').hidden = !lnBatch;
+    byId('calLoanSelCount').textContent = '已选 ' + Object.keys(lnSelected).length + ' 笔';
+
+    if (!loans.length) {
+      byId('calLoanList').innerHTML =
+        '<div class="empty"><span class="ico">🧾</span><div class="t">本月还没有借支</div>' +
+        '<div class="s">点右上「记一笔」，登记后按登记月份从工资中扣除。</div></div>';
+      return;
+    }
+    byId('calLoanList').innerHTML = loans.map(loanItemHtml).join('');
+  }
+
+  function loanItemHtml(l) {
+    var p = l.date.split('-');
+    var wd = L.weekName(new Date(+p[0], +p[1] - 1, +p[2]).getDay());
+    var sel = lnBatch && lnSelected[l.id];
+    return '<div class="loan-item' + (sel ? ' sel' : '') + '" data-id="' + l.id + '">' +
+      (lnBatch
+        ? '<span class="loan-check">✓</span>'
+        : '<span class="loan-date">' + (+p[1]) + '-' + p[2] + '<small>' + wd + '</small></span>') +
+      '<div class="loan-main">' +
+      '<div class="loan-note' + (l.note ? '' : ' empty') + '">' + UI.esc(l.note || '无备注') + '</div>' +
+      '<div class="loan-meta">' + (lnBatch ? l.date + ' ' + wd + ' · ' : '') +
+      '计入 ' + (+l.month.split('-')[1]) + ' 月工资' +
+      (lnBatch ? '' : ' <button class="loan-month" data-edit="' + l.id + '" type="button">改月份</button>') +
+      '</div>' +
+      '</div>' +
+      '<div class="loan-amt">-' + S.yuan(l.amount) + '</div>' +
+      (lnBatch ? '' : '<button class="loan-del" data-del="' + l.id + '" aria-label="删除">✕</button>') +
+      '</div>';
+  }
+
+  function onLoanListClick(e) {
+    var editBtn = e.target.closest ? e.target.closest('.loan-month') : null;
+    if (editBtn) {
+      var eid = editBtn.getAttribute('data-edit');
+      var target = S.getLoans().filter(function (l) { return l.id === eid; })[0];
+      if (target) global.GC.loanSheet.open(target.date, target);
+      return;
+    }
+
+    var delBtn = e.target.closest ? e.target.closest('.loan-del') : null;
+    if (delBtn) {
+      var id = delBtn.getAttribute('data-del');
+      var loan = S.getLoans().filter(function (l) { return l.id === id; })[0];
+      if (!loan) return;
+      UI.confirm({
+        title: '删除这条借支',
+        message: loan.date + '　' + S.yuan(loan.amount) + (loan.note ? '　' + loan.note : '') + '\n删除后不可恢复。',
+        okText: '删除',
+        tone: 'danger'
+      }).then(function (ok) {
+        if (!ok) return;
+        S.removeLoan(id);
+        UI.toast('已删除该借支记录');
+      });
+      return;
+    }
+
+    if (lnBatch) {
+      var item = e.target.closest ? e.target.closest('.loan-item') : null;
+      if (!item) return;
+      var lid = item.getAttribute('data-id');
+      if (lnSelected[lid]) delete lnSelected[lid];
+      else lnSelected[lid] = true;
+      renderSettle();
+    }
+  }
+
+  function toggleLoanBatch() {
+    lnBatch = !lnBatch;
+    lnSelected = {};
+    if (lnBatch && batch) {
+      batch = false;
+      selected = {};
+      byId('batchBar').hidden = true;
+      byId('calBatch').textContent = '批量';
+      byId('calBatch').classList.remove('on');
+    }
+    render();
+    if (lnBatch) UI.toast('进入借支多选：点选记录后可批量删除', 1800);
+  }
+
+  function exitLoanBatch() {
+    lnBatch = false;
+    lnSelected = {};
+    render();
+  }
+
+  function selectAllLoans() {
+    var loans = S.getLoans(curMonth());
+    if (!loans.length) { UI.toast('本月没有借支记录'); return; }
+    lnSelected = {};
+    loans.forEach(function (l) { lnSelected[l.id] = true; });
+    renderSettle();
+  }
+
+  function deleteSelectedLoans() {
+    var ids = Object.keys(lnSelected);
+    if (!ids.length) { UI.toast('请先选择要删除的借支'); return; }
+    UI.confirm({
+      title: '批量删除借支',
+      message: '将删除选中的 ' + ids.length + ' 笔借支记录，无法恢复。',
+      okText: '删除',
+      tone: 'danger'
+    }).then(function (ok) {
+      if (!ok) return;
+      var n = S.removeLoans(ids);
+      lnBatch = false;
+      lnSelected = {};
+      UI.toast('已删除 ' + n + ' 笔借支');
+      render();
+    });
+  }
+
+  /* ============================================================ 单日面板 */
+
+  function onGridClick(e) {
+    var cell = e.target.closest ? e.target.closest('.cell') : null;
+    if (!cell) return;
+    var ds = cell.getAttribute('data-date');
+    if (!ds) return;
+    if (batch) {
+      if (selected[ds]) delete selected[ds];
+      else selected[ds] = true;
+      render();
+      return;
+    }
+    openDay(ds);
+  }
+
+  function openDay(ds) {
+    sheetDate = ds;
+    renderDaySheet(ds);
+    UI.openSheet(byId('dayMask'));
+  }
+
+  function renderDaySheet(ds) {
+    var p = ds.split('-');
+    var y = +p[0], m = +p[1], d = +p[2];
+    var info = L.dayInfo(y, m, d);
+    var rec = S.getRecord(ds);
+    var type = rec ? rec.type : '';
+    var s = S.getSettings();
+
+    byId('dayTitle').textContent = m + '月' + d + '日 ' + info.weekdayName;
+    var sub = '农历' + info.lunar.full;
+    if (info.name && info.nameType !== 'lunar') sub += ' · ' + info.name;
+    else if (info.lunarFest) sub += ' · ' + info.lunarFest;
+    byId('daySub').textContent = sub;
+
+    /* 标签 */
+    var tags = [];
+    if (info.off) tags.push('<span class="tag off">法定节假日 · ' + UI.esc(info.holidayName) + '</span>');
+    if (info.work) tags.push('<span class="tag work">调休上班</span>');
+    if (ds === S.todayStr()) tags.push('<span class="tag brand">今天</span>');
+    if (type) tags.push('<span class="tag ok">已记录 ' + TYPE_NAME[type] + '</span>');
+    if (info.lunarFest && info.lunarFest !== info.name) tags.push('<span class="tag">' + info.lunarFest + '</span>');
+    byId('dayTags').innerHTML = tags.join('');
+
+    /* 四个班次按钮金额 */
+    var whitePay = S.round2(Number(s.whitePay) || 0);
+    var nightPay = S.round2((Number(s.nightPay) || 0) + (Number(s.nightAllowance) || 0));
+    var btns = byId('dayBtns').querySelectorAll('.shift-btn');
+    for (var i = 0; i < btns.length; i++) {
+      var t = btns[i].getAttribute('data-type');
+      btns[i].classList.toggle('active', t === type);
+      var amtEl = btns[i].querySelector('.sb-amt');
+      if (t === 'white') amtEl.textContent = '¥' + S.money(whitePay);
+      else if (t === 'night') amtEl.textContent = '¥' + S.money(nightPay);
+      else if (t === 'rest') amtEl.textContent = '¥0.00';
+      else amtEl.textContent = '—';
+    }
+
+    /* 计件 / 计时：没有填过的日子用设置里的默认单价、时薪占位 */
+    var qty = rec ? rec.qty : 0;
+    var hours = rec ? rec.hours : 0;
+    setInput('dayQty', qty);
+    setInput('dayPrice', (rec && rec.price > 0) ? rec.price : Number(s.pieceUnitPrice) || 0);
+    setInput('dayHours', hours);
+    setInput('dayRate', (rec && rec.rate > 0) ? rec.rate : Number(s.hourlyRate) || 0);
+
+    /* 备注 */
+    var noteEl = byId('dayNote');
+    if (document.activeElement !== noteEl) noteEl.value = (rec && rec.note) ? rec.note : '';
+
+    updateDayCalc();
+  }
+
+  /** 用当前输入重算：当日计件/计时合计 + 当日总预估 */
+  function updateDayCalc() {
+    var s = S.getSettings();
+    var qty = readNum('dayQty');
+    var hours = readNum('dayHours');
+    var priceRaw = readNum('dayPrice');
+    var rateRaw = readNum('dayRate');
+    var price = priceRaw > 0 ? priceRaw : (Number(s.pieceUnitPrice) || 0);
+    var rate = rateRaw > 0 ? rateRaw : (Number(s.hourlyRate) || 0);
+
+    var piece = S.round2(qty * price);
+    var hourly = S.round2(hours * rate);
+    var type = sheetDate ? S.getType(sheetDate) : '';
+    var shift = sheetDate ? S.dayPay(type) : 0;
+
+    byId('dayWorkSum').textContent = S.yuan(S.round2(piece + hourly));
+
+    var lines = '<div>今日预估　白班 <b>¥' + S.money(s.whitePay) + '</b>　晚班 <b>¥' +
+      S.money(S.round2(Number(s.nightPay) + Number(s.nightAllowance))) + '</b></div>';
+    lines += '<div style="margin-top:3px;color:var(--text-3)">晚班含夜宵补助 ¥' + S.money(s.nightAllowance || 0) + '</div>';
+
+    if (shift > 0 || piece > 0 || hourly > 0) {
+      var parts = [];
+      if (shift > 0) parts.push(TYPE_NAME[type] + ' ¥' + S.money(shift));
+      if (piece > 0) parts.push('计件 ' + S.compact(qty) + '件 ¥' + S.money(piece));
+      if (hourly > 0) parts.push('计时 ' + S.compact(hours) + '小时 ¥' + S.money(hourly));
+      lines += '<div style="margin-top:5px">本日合计 <b>¥' +
+        S.money(S.round2(shift + piece + hourly)) + '</b>' +
+        '<span style="color:var(--text-3);font-size:11px">（' + parts.join(' ＋ ') + '）</span></div>';
+    }
+    byId('dayEst').innerHTML = lines;
+  }
+
+  function saveWork() {
+    if (!sheetDate) return;
+    S.setWork(sheetDate, {
+      qty: readNum('dayQty'),
+      price: readNum('dayPrice'),
+      hours: readNum('dayHours'),
+      rate: readNum('dayRate')
+    });
+  }
+
+  function onShiftClick(e) {
+    var btn = e.target.closest ? e.target.closest('.shift-btn') : null;
+    if (!btn || !sheetDate) return;
+    var type = btn.getAttribute('data-type');
+    var label = shortDate(sheetDate);
+
+    if (type === 'clear') {
+      if (!S.getType(sheetDate)) {
+        UI.toast('这一天还没有记录班次');
+        return;
+      }
+      S.setType(sheetDate, 'clear');
+      UI.toast('已清除班次：' + label, 1600);
+    } else {
+      S.setType(sheetDate, type);
+      UI.toast('已记录：' + label + ' ' + TYPE_NAME[type]);
+    }
+    renderDaySheet(sheetDate);
+  }
+
+  /** 关闭面板时统一保存备注与计件/计时 */
+  function saveDaySheet() {
+    if (!sheetDate) return;
+    saveWork();
+    var noteEl = byId('dayNote');
+    var rec = S.getRecord(sheetDate);
+    var oldNote = rec && rec.note ? rec.note : '';
+    if (noteEl.value !== oldNote) S.setNote(sheetDate, noteEl.value);
+  }
+
+  function shortDate(ds) {
+    var p = ds.split('-');
+    return (+p[1]) + '月' + (+p[2]) + '日';
+  }
+
+  /* ============================================================ 班次批量 */
+
+  function toggleBatch() {
+    batch = !batch;
+    selected = {};
+    if (batch && lnBatch) {
+      lnBatch = false;
+      lnSelected = {};
+    }
+    render();
+    if (batch) UI.toast('进入批量模式：点选多天', 1600);
+  }
+
+  function exitBatch() {
+    batch = false;
+    selected = {};
+    render();
+  }
+
+  function selectAllMonth() {
+    var dim = L.daysInMonth(view.y, view.m);
+    for (var d = 1; d <= dim; d++) {
+      selected[curMonth() + '-' + S.pad2(d)] = true;
+    }
+    render();
+    UI.toast('已全选本月 ' + dim + ' 天', 1500);
+  }
+
+  function updateBatchBar() {
+    var bar = byId('batchBar');
+    if (!bar) return;
+    if (!batch) { bar.hidden = true; return; }
+    bar.hidden = false;
+    byId('batchCount').textContent = '已选 ' + Object.keys(selected).length + ' 天';
+  }
+
+  function onBatchAction(e) {
+    var btn = e.target.closest ? e.target.closest('button') : null;
+    if (!btn) return;
+    var act = btn.getAttribute('data-act');
+    if (!act) return;
+
+    if (act === 'cancel') { exitBatch(); return; }
+
+    var keys = Object.keys(selected);
+    if (!keys.length) {
+      UI.toast('请先在日历上点选日期');
+      return;
+    }
+
+    if (act === 'white' || act === 'night' || act === 'rest') {
+      for (var i = 0; i < keys.length; i++) S.setType(keys[i], act);
+      UI.toast('已将 ' + keys.length + ' 天设为' + TYPE_NAME[act]);
+      exitBatch();
+      return;
+    }
+
+    if (act === 'clear') {
+      for (var j = 0; j < keys.length; j++) S.setType(keys[j], 'clear');
+      UI.toast('已清除 ' + keys.length + ' 天的班次（备注与计件保留）');
+      exitBatch();
+      return;
+    }
+
+    if (act === 'delete') {
+      UI.confirm({
+        title: '删除选中记录',
+        message: '将删除 ' + keys.length + ' 天的全部记录（班次、计件、计时、备注），且无法恢复。',
+        okText: '删除',
+        tone: 'danger'
+      }).then(function (ok) {
+        if (!ok) return;
+        for (var k = 0; k < keys.length; k++) S.removeRecord(keys[k]);
+        UI.toast('已删除 ' + keys.length + ' 天记录');
+        exitBatch();
+      });
+    }
+  }
+
+  global.GC = global.GC || {};
+  global.GC.pages = global.GC.pages || {};
+  global.GC.pages.calendar = {
+    init: init,
+    render: render,
+    getView: function () { return { y: view.y, m: view.m }; }
+  };
+})(window);
+</script>
+<script>
+/* ============================================================
+   stats.js · 第 2 页：统计（出勤 / 工资明细 / 全年概览）
+   另：借支登记弹层（供日历页「记一笔」共用）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  var S = global.GC.store;
+  var UI = global.GC.ui;
+
+  var view = { y: 2026, m: 1 };
+
+  function byId(id) { return document.getElementById(id); }
+
+  /* ============================================================
+     初始化
+     ============================================================ */
+
+  function init() {
+    var now = new Date();
+    view.y = now.getFullYear();
+    view.m = now.getMonth() + 1;
+
+    byId('stPrev').addEventListener('click', function () { shift(-1); });
+    byId('stNext').addEventListener('click', function () { shift(1); });
+    byId('stTitle').addEventListener('click', gotoToday);
+
+    /* 借支弹层 */
+    byId('loanDate').addEventListener('change', onLoanDateChange);
+    byId('loanMonthPrev').addEventListener('click', function () { stepLoanMonth(-1); });
+    byId('loanMonthNext').addEventListener('click', function () { stepLoanMonth(1); });
+    byId('loanSave').addEventListener('click', saveLoan);
+    byId('loanMask').addEventListener('click', function (e) {
+      if (e.target === byId('loanMask')) UI.closeSheet(byId('loanMask'));
+    });
+  }
+
+  /* ============================================================
+     页面渲染
+     ============================================================ */
+
+  function shift(delta) {
+    var m = view.m + delta, y = view.y;
+    if (m < 1) { m = 12; y -= 1; }
+    if (m > 12) { m = 1; y += 1; }
+    view.y = y; view.m = m;
+    render();
+  }
+
+  function gotoToday() {
+    var now = new Date();
+    view.y = now.getFullYear();
+    view.m = now.getMonth() + 1;
+    render();
+    UI.toast('已回到本月');
+  }
+
+  function render() {
+    if (!byId('stAttend')) return;
+    byId('stTitle').textContent = view.y + '年' + view.m + '月';
+    var stat = S.calcMonth(S.monthKey(view.y, view.m));
+
+    renderAttendance(stat);
+    renderWage(stat);
+    renderYear();
+  }
+
+  function renderAttendance(stat) {
+    byId('stAttend').innerHTML =
+      box('white', stat.white, '白班') +
+      box('night', stat.night, '晚班') +
+      box('rest', stat.rest, '休息') +
+      box('total', stat.attendance, '出勤合计') +
+      box('allow', stat.allowanceCount, '夜宵补助次数') +
+      box('', stat.attendance + '/' + stat.fullThreshold, '全勤进度');
+
+    function box(cls, v, k) {
+      return '<div class="stat-box ' + cls + '"><span class="v">' + v + '</span><span class="k">' + k + '</span></div>';
+    }
+  }
+
+  function renderWage(stat) {
+    var s = S.getSettings();
+    var rows = [];
+
+    rows.push(row('计件工资',
+      stat.totalQty + ' 件 · 按日累计（数量 × 单价）', stat.piecePay));
+    rows.push(row('计时工资',
+      stat.totalHours + ' 小时 · 按日累计（时薪 × 小时）', stat.hourlyPay));
+    rows.push(row('白班工资',
+      stat.white + ' 天 × ¥' + S.money(s.whitePay), stat.whitePay));
+    rows.push(row('晚班工资',
+      stat.night + ' 天 × ¥' + S.money(s.nightPay), stat.nightPay));
+    rows.push(row('房补',
+      stat.attendance >= 1 ? '当月出勤 ≥ 1 天，全额发放' : '当月无出勤，不发', stat.housing));
+    rows.push(row('全勤奖',
+      '本月出勤 ' + stat.attendance + ' 天 / 门槛 ' + stat.fullThreshold + ' 天' +
+      (stat.fullReached ? ' · 已达标' : ' · 未达标'),
+      stat.fullBonus, stat.fullReached ? 'ok' : 'warn'));
+    rows.push(row('夜宵补助',
+      stat.night + ' 晚 × ¥' + S.money(s.nightAllowance), stat.allowance));
+
+    rows.push('<div class="row sum"><span class="row-main"><span class="row-label">应发合计</span></span>' +
+      '<span class="row-val">' + S.yuan(stat.gross) + '</span></div>');
+
+    rows.push('<div class="row"><span class="row-main"><span class="row-label">本月借支</span>' +
+      '<span class="row-sub">' + S.getLoans(stat.month).length + ' 笔 · 从当月扣除</span></span>' +
+      '<span class="row-val neg">-' + S.yuan(stat.loan) + '</span></div>');
+
+    rows.push('<div class="net-box"><span class="nb-label">实发金额</span>' +
+      '<span class="nb-val">' + S.yuan(stat.net) + '</span></div>');
+
+    byId('stWage').innerHTML = rows.join('');
+
+    function row(label, sub, val, subCls) {
+      return '<div class="row"><span class="row-main">' +
+        '<span class="row-label">' + UI.esc(label) + '</span>' +
+        '<span class="row-sub ' + (subCls || '') + '">' + UI.esc(sub) + '</span>' +
+        '</span><span class="row-val">' + S.yuan(val) + '</span></div>';
+    }
+  }
+
+  function renderYear() {
+    var list = S.calcYear(view.y);
+    var max = 0;
+    list.forEach(function (s) { if (s.net > max) max = s.net; });
+    var html = list.map(function (s) {
+      var pct = max > 0 ? Math.max(2, Math.round(s.net / max * 100)) : 0;
+      var cur = (s.monthNum === view.m) ? ' cur' : '';
+      return '<div class="year-row' + cur + '">' +
+        '<span class="ym">' + s.monthNum + ' 月</span>' +
+        '<span class="bar"><i style="width:' + pct + '%"></i></span>' +
+        '<span class="yv">' + S.yuan(s.net) + '</span>' +
+        '</div>';
+    }).join('');
+    byId('stYear').innerHTML = html;
+  }
+
+  /* ============================================================
+     借支弹层（日历页与统计页共用）
+     ============================================================ */
+
+  var editingId = '';      /* 正在修改的借支 id，空字符串表示新增 */
+  var loanMonth = '';      /* 这笔借支从哪个月的工资里扣 */
+  var monthTouched = false;
+
+  function openLoanSheet(dateStr, loan) {
+    editingId = loan ? loan.id : '';
+    monthTouched = false;
+
+    byId('loanTitle').textContent = loan ? '修改借支' : '记一笔借支';
+    byId('loanSave').textContent = loan ? '保存修改' : '保存';
+
+    var d = (loan ? loan.date : dateStr) || S.todayStr();
+    byId('loanDate').value = d;
+    byId('loanAmount').value = loan ? String(loan.amount) : '';
+    byId('loanNote').value = loan ? (loan.note || '') : '';
+    loanMonth = loan ? loan.month : S.monthOfDate(d);
+
+    renderMonthPick();
+    UI.openSheet(byId('loanMask'));
+    setTimeout(function () {
+      try { byId('loanAmount').focus(); } catch (e) {}
+    }, 320);
+  }
+
+  function renderMonthPick() {
+    if (!loanMonth) loanMonth = S.monthOfDate(S.todayStr());
+    var p = loanMonth.split('-');
+    byId('loanMonthLabel').textContent = (+p[0]) + '年' + (+p[1]) + '月';
+    updateLoanHint();
+  }
+
+  function stepLoanMonth(delta) {
+    var p = loanMonth.split('-');
+    var y = +p[0], m = +p[1] + delta;
+    if (m < 1) { m = 12; y -= 1; }
+    if (m > 12) { m = 1; y += 1; }
+    if (y < 2015) { y = 2015; m = 1; }
+    if (y > 2035) { y = 2035; m = 12; }
+    loanMonth = y + '-' + (m < 10 ? '0' + m : m);
+    monthTouched = true;
+    renderMonthPick();
+  }
+
+  function onLoanDateChange() {
+    var d = byId('loanDate').value;
+    if (!d) return;
+    /* 用户没手动选过月份时，跟着日期走 */
+    if (!monthTouched) loanMonth = S.monthOfDate(d);
+    renderMonthPick();
+  }
+
+  function updateLoanHint() {
+    var p = loanMonth.split('-');
+    byId('loanHint').textContent = '将从「' + (+p[0]) + '年' + (+p[1]) +
+      '月」的工资里扣除；点 ‹ › 可改成其他月份（例如本月借支、下月发薪时扣）。';
+  }
+
+  function saveLoan() {
+    var d = byId('loanDate').value || S.todayStr();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) { UI.toast('请选择日期'); return; }
+    var amt = Number(byId('loanAmount').value);
+    if (!isFinite(amt) || amt <= 0) { UI.toast('请输入大于 0 的借支金额'); return; }
+    var note = byId('loanNote').value.trim();
+
+    if (editingId) {
+      S.updateLoan(editingId, { date: d, amount: amt, note: note, month: loanMonth });
+    } else {
+      S.addLoan(d, amt, note, loanMonth);
+    }
+
+    var p = loanMonth.split('-');
+    var sameMonth = S.monthOfDate(d) === loanMonth;
+    UI.closeSheet(byId('loanMask'));
+    UI.toast((editingId ? '借支已修改：' : '已记一笔借支：') + S.yuan(amt) +
+      '（计入 ' + (+p[0]) + '年' + (+p[1]) + '月）', 2400);
+    editingId = '';
+    if (!sameMonth) UI.toast('已跨月计入：在 ' + (+p[1]) + ' 月的日历底部可看到这笔', 2600);
+  }
+
+  global.GC = global.GC || {};
+  global.GC.pages = global.GC.pages || {};
+  global.GC.pages.stats = { init: init, render: render };
+  global.GC.loanSheet = { open: openLoanSheet };
+})(window);
+</script>
+<script>
+/* ============================================================
+   settings.js · 第 4 页：设置（工资参数 / 数据管理 / 关于）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  var S = global.GC.store;
+  var UI = global.GC.ui;
+
+  var FIELDS = [
+    ['pWhitePay', 'whitePay', '白班日薪'],
+    ['pNightPay', 'nightPay', '晚班日薪'],
+    ['pNightAllow', 'nightAllowance', '夜宵补助'],
+    ['pHousing', 'housingAllow', '房补'],
+    ['pFullBonus', 'fullBonus', '全勤奖'],
+    ['pFullThreshold', 'fullThreshold', '全勤门槛'],
+    ['pPiecePrice', 'pieceUnitPrice', '计件单价'],
+    ['pHourlyRate', 'hourlyRate', '时薪']
+  ];
+
+  var saveTimer = null;
+
+  function byId(id) { return document.getElementById(id); }
+
+  function init() {
+    FIELDS.forEach(function (f) {
+      var el = byId(f[0]);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        if (saveTimer) clearTimeout(saveTimer);
+        saveTimer = setTimeout(commit, 450);
+      });
+      el.addEventListener('change', function () {
+        if (saveTimer) clearTimeout(saveTimer);
+        commit();
+      });
+      el.addEventListener('blur', function () {
+        if (saveTimer) clearTimeout(saveTimer);
+        commit();
+      });
+    });
+
+    byId('btnExport').addEventListener('click', exportData);
+    byId('btnImport').addEventListener('click', function () {
+      byId('importFile').click();
+    });
+    byId('importFile').addEventListener('change', importFile);
+    byId('btnClear').addEventListener('click', clearAll);
+  }
+
+  function commit() {
+    var changed = [];
+    FIELDS.forEach(function (f) {
+      var el = byId(f[0]);
+      if (!el) return;
+      var v = el.value === '' ? 0 : Number(el.value);
+      if (!isFinite(v) || v < 0) v = 0;
+      var cur = Number(S.getSettings()[f[1]]) || 0;
+      if (Math.abs(cur - v) > 1e-9) {
+        S.setSetting(f[1], v);
+        changed.push(f[2]);
+      }
+    });
+    if (changed.length) UI.toast('已保存：' + changed.join('、'), 1600);
+  }
+
+  function render() {
+    if (!byId('pWhitePay')) return;
+    FIELDS.forEach(function (f) {
+      var el = byId(f[0]);
+      if (!el || document.activeElement === el) return;
+      var v = Number(S.getSettings()[f[1]]) || 0;
+      var cur = el.value === '' ? 0 : Number(el.value);
+      if (Math.abs(cur - v) > 1e-9) el.value = String(v);
+    });
+
+    var hint = byId('storageHint');
+    if (hint) {
+      if (S.isStorageOK()) {
+        hint.textContent = '数据保存在本机浏览器中，不会上传。建议定期导出备份。';
+        hint.style.color = '';
+      } else {
+        hint.textContent = '⚠️ 当前浏览器限制了本地存储，数据可能无法长期保存，请及时导出备份。';
+        hint.style.color = 'var(--danger)';
+      }
+    }
+  }
+
+  /* ---------------- 导出 ---------------- */
+
+  function exportData() {
+    var text = JSON.stringify(S.exportObject(), null, 2);
+    var name = '工资日历备份-' + S.todayStr() + '.json';
+    try {
+      var blob = new Blob([text], { type: 'application/json;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () {
+        if (a.parentNode) a.parentNode.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 1200);
+      UI.toast('已导出：' + name, 2400);
+    } catch (e) {
+      try {
+        var w = window.open('', '_blank');
+        if (w) {
+          w.document.write('<meta name="viewport" content="width=device-width,initial-scale=1">' +
+            '<pre style="white-space:pre-wrap;word-break:break-all;font:12px/1.5 monospace;padding:12px">' +
+            UI.esc(text) + '</pre>');
+          w.document.close();
+          UI.toast('已在新页面展示备份内容，请长按复制保存', 2600);
+        } else {
+          UI.toast('导出失败，请在浏览器中打开后再试');
+        }
+      } catch (e2) {
+        UI.toast('导出失败，请在浏览器中打开后再试');
+      }
+    }
+  }
+
+  /* ---------------- 导入 ---------------- */
+
+  function importFile(e) {
+    var input = e.target;
+    var file = input.files && input.files[0];
+    if (!file) return;
+
+    var reader = new FileReader();
+    reader.onload = function () {
+      var obj;
+      try {
+        obj = JSON.parse(String(reader.result));
+      } catch (err) {
+        UI.toast('文件不是有效的 JSON，导入已取消', 2400);
+        input.value = '';
+        return;
+      }
+      UI.confirm({
+        title: '导入数据',
+        message: '导入会用备份内容覆盖当前的全部记录与设置，是否继续？',
+        okText: '导入覆盖',
+        tone: 'danger'
+      }).then(function (ok) {
+        input.value = '';
+        if (!ok) return;
+        try {
+          S.importObject(obj);
+          render();
+          UI.toast('导入成功，数据已恢复', 2200);
+        } catch (err2) {
+          UI.toast('导入失败：' + err2.message, 2600);
+        }
+      });
+    };
+    reader.onerror = function () {
+      UI.toast('读取文件失败，请重试');
+      input.value = '';
+    };
+    reader.readAsText(file, 'utf-8');
+  }
+
+  /* ---------------- 清空 ---------------- */
+
+  function clearAll() {
+    UI.confirm({
+      title: '清空所有数据',
+      message: '班次记录、借支记录与工资参数将全部删除，且无法恢复。\n请在下框输入「确认」后继续。',
+      requireText: '确认',
+      okText: '清空',
+      tone: 'danger'
+    }).then(function (ok) {
+      if (!ok) return;
+      S.clearAll();
+      render();
+      UI.toast('已清空所有数据', 2000);
+    });
+  }
+
+  global.GC = global.GC || {};
+  global.GC.pages = global.GC.pages || {};
+  global.GC.pages.settings = { init: init, render: render };
+})(window);
+</script>
+<script>
+/* ============================================================
+ * cloud.js · 云存储通道（Supabase REST 直连，不依赖任何第三方 SDK）
+ * ------------------------------------------------------------
+ * 设计要点：
+ *  1) 只用 Supabase 的两个产品能力：Auth（账号密码） + PostgREST（数据表）
+ *     - 都用 fetch 直接调 REST 接口，不引入 supabase-js，保证单文件离线可用
+ *     - 断网/未配置时所有调用都会以 Promise reject 形式返回，界面不会崩
+ *  2) 账号：Supabase Auth 的邮箱+密码体系
+ *     - 用户界面只填「账号 + 密码」，账号若是手机号/昵称会自动补成
+ *       `账号@wagecal.local` 再注册，所以你看到的是独立账号体系
+ *     - 不会出现任何百度 / 微信 / Google 等第三方登录
+ *  3) 数据：两张表
+ *     - wagecal_data    每人一行，存「当前云端版本」（覆盖保存）
+ *     - wagecal_history 每次上传存一条历史版本，供「恢复历史」使用
+ *     - 两张表都开启 RLS，只能读写 auth.uid() = user_id 的行
+ *  4) 会话：access_token / refresh_token 存 localStorage，
+ *     过期前自动 refresh；退出登录会清本地会话
+ *
+ * ★★★ 你只需要改下面 CONFIG 里的两个值就能跑 ★★★
+ *     SUPABASE_URL     例：https://abcdefghijk.supabase.co
+ *     SUPABASE_ANON_KEY  例：eyJhbGciOiJIUzI1NiIsInR5cCI6...
+ * 详细步骤见《云同步部署教程.md》
+ * ============================================================ */
+(function (global) {
+  'use strict';
+
+  /* ==========================================================
+   * 一、配置区（唯一需要手动填写的地方）
+   * ========================================================== */
+  var CONFIG = {
+    /* 项目地址：Supabase → Project Settings → API → Project URL */
+    SUPABASE_URL: 'https://crlckzqibihhjqjdmnmx.supabase.co',
+
+    /* 匿名公钥：Supabase → Project Settings → API → anon public
+       注意：这里只能填 anon key；service_role key 绝对不能放前端 */
+    SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybGNrenFpYmloaGpxamRtbm14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU1NzUxNzMsImV4cCI6MjExMTE1MTE3M30.9wzDagB7J3yazZUMVTw86LAib8Z-1gBO0R_GN5f9DVA',
+
+    /* 表名（按教程建表时保持一致即可，也可改名） */
+    TABLE_DATA: 'wagecal_data',
+    TABLE_HISTORY: 'wagecal_history',
+
+    /* 历史版本最多保留的条数（展示上限） */
+    HISTORY_LIMIT: 20,
+
+    /* 登录后是否默认开启自动同步（用户可在设置里关掉） */
+    AUTO_SYNC_DEFAULT: true
+  };
+
+  /* 本地会话存储键 */
+  var SESSION_KEY = 'wagecal.auth.v1';
+  var AUTO_SYNC_KEY = 'wagecal.autosync.v1';
+  /* 账号若不是邮箱格式，自动补齐的域名（只在你自己的库里用，不发信） */
+  var ACCOUNT_DOMAIN = 'wagecal.local';
+
+  var session = null;          /* 当前会话（内存态） */
+  var refreshTimer = null;     /* 定时刷新令牌 */
+
+  /* ==========================================================
+   * 二、基础工具
+   * ========================================================== */
+
+  function byId(id) { return document.getElementById(id); }
+
+  /** 构造带错误码的异常，便于界面区分「未登录 / 网络 / 密码错」 */
+  function apiError(code, message) {
+    var err = new Error(message || code || '请求失败');
+    err.code = code || 'unknown';
+    return err;
+  }
+
+  /** 是否已经把项目地址与密钥填好了 */
+  function isConfigured() {
+    return !!(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY);
+  }
+
+  function baseUrl() {
+    return String(CONFIG.SUPABASE_URL || '').replace(/\/+$/, '');
+  }
+
+  /** 把「账号」转成 Supabase 需要的邮箱格式 */
+  function toEmail(account) {
+    var a = String(account || '').trim();
+    if (a.indexOf('@') > 0) return a;                    /* 已经填了邮箱 */
+    return a + '@' + ACCOUNT_DOMAIN;                     /* 手机号/昵称 → 合成邮箱 */
+  }
+
+  /** 界面展示用的账号名：合成邮箱去掉域名 */
+  function displayOf(account, email) {
+    var a = String(account || '').trim();
+    if (a) return a;
+    var e = String(email || '');
+    if (e.indexOf('@' + ACCOUNT_DOMAIN) > 0) return e.split('@')[0];
+    return e || '已登录用户';
+  }
+
+  /** 统一请求入口：拼 URL、塞公共头、统一解析错误 */
+  function request(path, options, useToken) {
+    if (!isConfigured()) {
+      return Promise.reject(apiError('not_configured', '尚未配置 Supabase 项目地址与密钥'));
+    }
+    options = options || {};
+    var headers = {
+      'apikey': CONFIG.SUPABASE_ANON_KEY,
+      'Content-Type': 'application/json'
+    };
+    /* 已登录时用用户令牌（RLS 需要），否则用 anon 令牌 */
+    headers['Authorization'] = 'Bearer ' +
+      (useToken && session && session.access_token ? session.access_token : CONFIG.SUPABASE_ANON_KEY);
+
+    var merged = Object.assign({}, options.headers || {}, headers);
+    var init = { method: options.method || 'GET', headers: merged };
+    if (options.body !== undefined) init.body = options.body;
+
+    /* 15 秒超时，避免弱网时一直转圈 */
+    var controller = null;
+    if (typeof AbortController !== 'undefined') {
+      controller = new AbortController();
+      init.signal = controller.signal;
+      setTimeout(function () { try { controller.abort(); } catch (e) {} }, 15000);
+    }
+
+    return fetch(baseUrl() + path, init).then(function (res) {
+      return res.text().then(function (text) {
+        var body = null;
+        if (text) { try { body = JSON.parse(text); } catch (e) { body = null; } }
+        if (!res.ok) {
+          var msg = (body && (body.error_description || body.msg || body.message || body.error)) ||
+            ('请求失败（HTTP ' + res.status + '）');
+          var code = (body && (body.error_code || body.code || body.error)) || ('http_' + res.status);
+          throw apiError(String(code), String(msg));
+        }
+        return body;
+      });
+    }, function () {
+      throw apiError('network', '网络异常，请检查网络后重试');
+    });
+  }
+
+  /* ==========================================================
+   * 三、会话管理（登录态持久化 + 自动续期）
+   * ========================================================== */
+
+  function readSession() {
+    try {
+      var raw = global.localStorage.getItem(SESSION_KEY);
+      if (!raw) return null;
+      var s = JSON.parse(raw);
+      return (s && s.access_token) ? s : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeSession(s) {
+    session = s;
+    try {
+      if (s) global.localStorage.setItem(SESSION_KEY, JSON.stringify(s));
+      else global.localStorage.removeItem(SESSION_KEY);
+    } catch (e) { /* 隐私模式下写不进去也不影响本次使用 */ }
+    scheduleRefresh();
+  }
+
+  /** 根据 expires_in 计算过期时间并排一个续期定时器 */
+  function saveSession(payload, account) {
+    var now = Date.now();
+    var s = {
+      access_token: payload.access_token,
+      refresh_token: payload.refresh_token,
+      expires_at: now + ((payload.expires_in || 3600) * 1000) - 60000,
+      account: displayOf(account, payload.user && payload.user.email),
+      user: {
+        id: (payload.user && payload.user.id) || '',
+        email: (payload.user && payload.user.email) || ''
+      }
+    };
+    writeSession(s);
+    return s;
+  }
+
+  function scheduleRefresh() {
+    if (refreshTimer) { clearTimeout(refreshTimer); refreshTimer = null; }
+    if (!session || !session.expires_at) return;
+    var delay = Math.max(5000, session.expires_at - Date.now() - 30000);
+    if (delay > 2147483000) return;   /* 超长定时器不排 */
+    refreshTimer = setTimeout(function () {
+      refreshToken().catch(function () { /* 失败就等用户手动重登 */ });
+    }, delay);
+  }
+
+  function isLoggedIn() {
+    return !!(session && session.access_token);
+  }
+
+  function currentUser() {
+    if (!session) return null;
+    return {
+      id: session.user.id,
+      account: session.account,
+      email: session.user.email
+    };
+  }
+
+  function ensureToken() {
+    if (!session) return Promise.reject(apiError('no_session', '请先登录账号'));
+    if (session.expires_at > Date.now() + 5000) return Promise.resolve(session);
+    return refreshToken();
+  }
+
+  function refreshToken() {
+    if (!session || !session.refresh_token) {
+      return Promise.reject(apiError('no_session', '登录已过期，请重新登录'));
+    }
+    return request('/auth/v1/token?grant_type=refresh_token', {
+      method: 'POST',
+      body: JSON.stringify({ refresh_token: session.refresh_token })
+    }).then(function (res) {
+      return saveSession(res, session.account);
+    }).catch(function (err) {
+      writeSession(null);
+      throw err;
+    });
+  }
+
+  /* ==========================================================
+   * 四、账号：注册 / 登录 / 退出 / 改密码
+   * ========================================================== */
+
+  /**
+   * 注册
+   * @returns Promise<{needConfirm:boolean}> needConfirm=true 表示项目还开着邮箱验证
+   */
+  function signUp(account, password) {
+    return request('/auth/v1/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: toEmail(account),
+        password: password,
+        data: { account: String(account || '').trim() }   /* 把原始账号存进 user_metadata */
+      })
+    }).then(function (res) {
+      /* 关闭“Confirm email”时，注册完直接带 access_token，可立即使用 */
+      if (res && res.access_token) {
+        saveSession(res, account);
+        return { needConfirm: false };
+      }
+      return { needConfirm: true };
+    });
+  }
+
+  function signIn(account, password) {
+    return request('/auth/v1/token?grant_type=password', {
+      method: 'POST',
+      body: JSON.stringify({ email: toEmail(account), password: password })
+    }).then(function (res) {
+      return saveSession(res, account);
+    });
+  }
+
+  function signOut() {
+    var p = Promise.resolve();
+    if (isLoggedIn()) {
+      p = request('/auth/v1/logout', { method: 'POST' }, true).catch(function () { /* 服务端失败也照样退出 */ });
+    }
+    return p.then(function () {
+      if (refreshTimer) clearTimeout(refreshTimer);
+      writeSession(null);
+      session = null;
+    });
+  }
+
+  function changePassword(newPassword) {
+    return ensureToken().then(function () {
+      return request('/auth/v1/user', {
+        method: 'PUT',
+        body: JSON.stringify({ password: newPassword })
+      }, true);
+    });
+  }
+
+  /* ==========================================================
+   * 五、云数据：上传（覆盖）/ 读取 / 历史 / 恢复
+   * ========================================================== */
+
+  /** 给历史版本生成一句摘要，方便在列表里辨认 */
+  function labelOf(payload) {
+    try {
+      var d = payload && payload.data ? payload.data : payload;
+      var records = (d && d.records) || {};
+      var loans = (d && d.loans) || [];
+      var months = {};
+      Object.keys(records).forEach(function (k) { months[k.slice(0, 7)] = 1; });
+      return '记录 ' + Object.keys(records).length + ' 处 · 借支 ' + loans.length +
+        ' 笔 · 月份 ' + Object.keys(months).length + ' 个';
+    } catch (e) { return ''; }
+  }
+
+  /**
+   * 上传：把本机数据覆盖写进云端，同时留一条历史版本
+   * @param payload 由 store.exportObject() 产出
+   */
+  function push(payload) {
+    return ensureToken().then(function () {
+      var now = new Date().toISOString();
+      return request('/rest/v1/' + CONFIG.TABLE_DATA + '?on_conflict=user_id', {
+        method: 'POST',
+        headers: { 'Prefer': 'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify({
+          user_id: session.user.id,
+          payload: payload,
+          updated_at: now
+        })
+      }, true).then(function () {
+        /* 历史版本写失败不影响主流程 */
+        return request('/rest/v1/' + CONFIG.TABLE_HISTORY, {
+          method: 'POST',
+          headers: { 'Prefer': 'return=minimal' },
+          body: JSON.stringify({
+            user_id: session.user.id,
+            payload: payload,
+            label: labelOf(payload)
+          })
+        }, true).catch(function () { return null; });
+      }).then(function () {
+        return { at: now };
+      });
+    });
+  }
+
+  /** 读取云端当前版本，没有则返回 null */
+  function pull() {
+    return ensureToken().then(function () {
+      return request('/rest/v1/' + CONFIG.TABLE_DATA +
+        '?select=payload,updated_at&user_id=eq.' + encodeURIComponent(session.user.id), {}, true);
+    }).then(function (rows) {
+      if (!rows || !rows.length) return null;
+      return { payload: rows[0].payload, updatedAt: rows[0].updated_at };
+    });
+  }
+
+  /** 历史版本列表（不含 payload 正文，省流量） */
+  function history() {
+    return ensureToken().then(function () {
+      return request('/rest/v1/' + CONFIG.TABLE_HISTORY +
+        '?select=id,created_at,label&user_id=eq.' + encodeURIComponent(session.user.id) +
+        '&order=created_at.desc&limit=' + CONFIG.HISTORY_LIMIT, {}, true);
+    }).then(function (rows) { return rows || []; });
+  }
+
+  /** 取某个历史版本的完整数据 */
+  function historyDetail(id) {
+    return ensureToken().then(function () {
+      return request('/rest/v1/' + CONFIG.TABLE_HISTORY +
+        '?select=payload,created_at,label&id=eq.' + encodeURIComponent(id) +
+        '&user_id=eq.' + encodeURIComponent(session.user.id), {}, true);
+    }).then(function (rows) {
+      if (!rows || !rows.length) throw apiError('not_found', '该历史版本不存在');
+      return rows[0];
+    });
+  }
+
+  /* ==========================================================
+   * 六、自动同步开关（存在 localStorage，本地记忆）
+   * ========================================================== */
+
+  function isAutoSyncOn() {
+    try {
+      var v = global.localStorage.getItem(AUTO_SYNC_KEY);
+      if (v === null) return CONFIG.AUTO_SYNC_DEFAULT;
+      return v === '1';
+    } catch (e) { return CONFIG.AUTO_SYNC_DEFAULT; }
+  }
+
+  function setAutoSync(on) {
+    try { global.localStorage.setItem(AUTO_SYNC_KEY, on ? '1' : '0'); } catch (e) {}
+  }
+
+  /* ==========================================================
+   * 七、启动：恢复本地会话；令牌快过期就先续一次
+   * ========================================================== */
+  function init() {
+    session = readSession();
+    if (session && session.expires_at && session.expires_at < Date.now() + 5000) {
+      refreshToken().catch(function () { writeSession(null); session = null; });
+    } else {
+      scheduleRefresh();
+    }
+  }
+
+  global.GC = global.GC || {};
+  global.GC.cloud = {
+    CONFIG: CONFIG,
+    init: init,
+    isConfigured: isConfigured,
+    toEmail: toEmail,
+    isLoggedIn: isLoggedIn,
+    currentUser: currentUser,
+
+    signUp: signUp,
+    signIn: signIn,
+    signOut: signOut,
+    changePassword: changePassword,
+
+    push: push,
+    pull: pull,
+    history: history,
+    historyDetail: historyDetail,
+    labelOf: labelOf,
+
+    isAutoSyncOn: isAutoSyncOn,
+    setAutoSync: setAutoSync
+  };
+})(window);
+</script>
+<script>
+/* ============================================================
+ * account.js · 账号 + 云存储 界面逻辑
+ * ------------------------------------------------------------
+ * 职责：
+ *  1) 右上角状态胶囊：游客 / 已登录（账号名）
+ *  2) 设置页「账号」卡：游客 → 登录/注册入口；已登录 → 改密码 / 退出
+ *  3) 设置页「云存储」卡：游客置灰并拦截点击；已登录 → 上传 / 读取 / 历史
+ *  4) 登录后自动同步（可在卡片里关掉）
+ * 原则：不登录也能 100% 使用本工具，这里只做「可选增强」
+ * ============================================================ */
+(function (global) {
+  'use strict';
+
+  var S = global.GC.store;
+  var UI = global.GC.ui;
+  var C = global.GC.cloud;
+
+  var authMode = 'login';        /* login | register */
+  var busy = false;              /* 防止重复提交 */
+  var autoTimer = null;          /* 自动同步防抖 */
+  var lastSyncAt = 0;            /* 最近一次成功同步时间 */
+  var syncing = false;           /* 正在上传云端 */
+  var muteAutoUntil = 0;         /* 刚从云端导入后短暂静音，避免把刚拿到的数据再推回去 */
+  var guestHinted = false;       /* 游客态提醒只弹一次，避免打扰 */
+
+  /* ----------------------------------------------------------
+   * 数据量判断：本机是不是空的（换手机、换浏览器时就是空的）
+   * ---------------------------------------------------------- */
+  function dataOf(payload) {
+    if (!payload) return { records: {}, loans: {} };
+    return payload.data || payload;   /* 兼容 {data:{...}} 与 {...} 两种结构 */
+  }
+
+  function localCount() {
+    var d = dataOf(S.exportObject());
+    return {
+      records: Object.keys(d.records || {}).length,
+      loans: (d.loans || []).length
+    };
+  }
+
+  function localEmpty() {
+    var c = localCount();
+    return c.records === 0 && c.loans === 0;
+  }
+
+  /** 用云端数据覆盖本机；导入后 5 秒内不自动上传，否则会把同一份数据再推一遍 */
+  function importFromCloud(payload) {
+    muteAutoUntil = Date.now() + 5000;
+    S.importObject(payload);
+    lastSyncAt = Date.now();
+  }
+
+  function byId(id) { return document.getElementById(id); }
+
+  /* ==========================================================
+   * 一、工具
+   * ========================================================== */
+
+  function fmtTime(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return String(iso);
+    var p = function (n) { return n < 10 ? '0' + n : String(n); };
+    return (d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  function fmtFull(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    var p = function (n) { return n < 10 ? '0' + n : String(n); };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) +
+      ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  /** 把 Supabase 的英文错误翻译成人话 */
+  function humanError(err) {
+    var code = String((err && err.code) || '');
+    var msg = String((err && err.message) || '');
+    if (code === 'not_configured') return '尚未配置云存储：请在代码顶部填写 Supabase 项目地址与密钥';
+    if (code === 'network') return '网络异常，请检查网络后重试';
+    if (code === 'no_session') return '请先登录账号，才能使用云存储同步功能';
+    if (/Invalid login credentials/i.test(msg)) return '账号或密码不正确';
+    if (/User already registered|already been registered/i.test(msg)) return '该账号已注册，请直接登录';
+    if (/Password should be at least/i.test(msg)) return '密码太短，至少 6 位';
+    if (/Email not confirmed/i.test(msg)) return '账号未验证：请在 Supabase 关闭邮箱验证，或到邮箱点击确认链接';
+    if (/invalid.*email|Unable to validate email/i.test(msg)) return '账号格式不正确，请换一个';
+    if (/row-level security|permission denied|42501/i.test(msg)) return '云端数据表权限不足：请在 Supabase 执行教程第 2 步的 grant 语句（授权给 authenticated）';
+    if (/relation .* does not exist|not find the table/i.test(msg)) return '云端数据表不存在，请先执行建表 SQL';
+    if (/JWT expired/i.test(msg)) return '登录已过期，请重新登录';
+    return msg || '操作失败，请稍后重试';
+  }
+
+  function toastErr(err) {
+    UI.toast(humanError(err), 2600);
+  }
+
+  /* ==========================================================
+   * 二、右上角状态胶囊
+   * ========================================================== */
+
+  function renderChips() {
+    var ids = ['acctChipCal', 'acctChipStats', 'acctChipSet'];
+    var logged = C.isLoggedIn();
+    var user = C.currentUser();
+    var text = logged ? (user && user.account ? user.account : '已登录') : '游客';
+    for (var i = 0; i < ids.length; i++) {
+      var el = byId(ids[i]);
+      if (!el) continue;
+      el.textContent = text;
+      el.classList.toggle('on', logged);
+      el.setAttribute('title', logged ? '已登录，点击查看账号' : '游客模式，点击登录');
+      el.classList.toggle('wide-name', logged && String(text).length > 4);
+    }
+  }
+
+  /** 点胶囊：游客 → 去设置页并打开登录；已登录 → 去设置页账号卡 */
+  function onChipClick() {
+    goSettings(function () {
+      if (!C.isLoggedIn()) openAuth('login');
+    });
+  }
+
+  /** 切到设置页，并滚动到账号卡 */
+  function goSettings(after) {
+    var tab = document.querySelector ? document.querySelector('.tab[data-page="settings"]') : null;
+    if (tab && tab.click) tab.click();
+    setTimeout(function () {
+      var card = byId('acctCard');
+      if (card && card.scrollIntoView) {
+        try { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { card.scrollIntoView(); }
+      }
+      if (typeof after === 'function') after();
+    }, 140);
+  }
+
+  /* ==========================================================
+   * 三、设置页：账号卡
+   * ========================================================== */
+
+  function renderAcct() {
+    var body = byId('acctBody');
+    var state = byId('acctState');
+    if (!body) return;
+
+    var logged = C.isLoggedIn();
+    var user = C.currentUser();
+
+    if (state) {
+      state.textContent = logged ? '已登录' : '游客模式';
+      state.className = 'acct-state' + (logged ? ' on' : '');
+    }
+
+    if (!logged) {
+      body.innerHTML =
+        '<p class="hint" style="margin-top:0">当前是游客模式：四个页面的全部功能都能用，数据只保存在这台设备的浏览器里。' +
+        '登录后解锁云存储（换手机也能接着记）。</p>' +
+        '<button class="primary-btn" id="acctLoginBtn" type="button">登录 / 注册</button>' +
+        '<p class="hint">账号体系由你自己的 Supabase 提供，不需要手机号验证、不接任何第三方登录。</p>';
+      return;
+    }
+
+    body.innerHTML =
+      '<div class="acct-row">' +
+        '<span class="acct-avatar">' + UI.esc(String((user && user.account) || 'U').slice(0, 1).toUpperCase()) + '</span>' +
+        '<span class="acct-main">' +
+          '<span class="acct-name">' + UI.esc((user && user.account) || '已登录用户') + '</span>' +
+          '<span class="acct-sub">' + UI.esc((user && user.email) || '') + '</span>' +
+        '</span>' +
+      '</div>' +
+      '<div class="acct-actions">' +
+        '<button class="ghost-btn" id="acctPwdBtn" type="button">修改密码</button>' +
+        '<button class="ghost-btn danger" id="acctLogoutBtn" type="button">退出登录</button>' +
+      '</div>';
+  }
+
+  /* ==========================================================
+   * 四、设置页：云存储卡
+   * ========================================================== */
+
+  function renderCloud() {
+    var body = byId('cloudBody');
+    var tag = byId('cloudTag');
+    if (!body) return;
+
+    var configured = C.isConfigured();
+    var logged = C.isLoggedIn();
+
+    if (tag) {
+      tag.textContent = !configured ? '未配置' : (logged ? '已登录' : '需登录');
+      tag.classList.toggle('ok', configured && logged);
+    }
+
+    if (!configured) {
+      body.innerHTML =
+        '<p class="hint" style="margin-top:0">云存储还没配置：请把 Supabase 项目地址与 anon 密钥填到代码顶部（' +
+        '<code>SUPABASE_URL</code> / <code>SUPABASE_ANON_KEY</code>），详见《云同步部署教程》。</p>' +
+        '<button class="list-btn cloud-act is-locked" data-act="upload" type="button"><span>上传到云端</span><span class="list-btn-sub">未配置</span></button>' +
+        '<button class="list-btn cloud-act is-locked" data-act="pull" type="button"><span>读取云端数据</span><span class="list-btn-sub">未配置</span></button>' +
+        '<button class="list-btn cloud-act is-locked" data-act="history" type="button"><span>云端历史版本</span><span class="list-btn-sub">未配置</span></button>';
+      return;
+    }
+
+    if (!logged) {
+      body.innerHTML =
+        '<p class="hint" style="margin-top:0">云存储功能已锁定。<b>请先登录账号，才能使用云存储同步功能。</b></p>' +
+        '<button class="list-btn cloud-act is-locked" data-act="upload" type="button"><span>上传到云端</span><span class="list-btn-sub">需登录</span></button>' +
+        '<button class="list-btn cloud-act is-locked" data-act="pull" type="button"><span>读取云端数据</span><span class="list-btn-sub">需登录</span></button>' +
+        '<button class="list-btn cloud-act is-locked" data-act="history" type="button"><span>云端历史版本</span><span class="list-btn-sub">需登录</span></button>' +
+        '<div class="cloud-foot"><span class="hint" style="margin:0">游客可用「数据管理 → 导出数据」做本地备份。</span></div>';
+      return;
+    }
+
+    var syncText = lastSyncAt ? ('上次同步 ' + fmtTime(new Date(lastSyncAt).toISOString())) : '本次登录还没同步过';
+    body.innerHTML =
+      '<button class="list-btn cloud-act" data-act="upload" type="button"><span>立即上传一次</span><span class="list-btn-sub">' + syncText + '</span></button>' +
+      '<button class="list-btn cloud-act" data-act="pull" type="button"><span>读取云端数据</span><span class="list-btn-sub">覆盖本机</span></button>' +
+      '<button class="list-btn cloud-act" data-act="history" type="button"><span>云端历史版本</span><span class="list-btn-sub">可回滚</span></button>' +
+      '<label class="switch-row">' +
+        '<span class="switch-label">自动同步<em>数据一改就自动上传</em></span>' +
+        '<input type="checkbox" id="autoSyncToggle" class="switch-input"' + (C.isAutoSyncOn() ? ' checked' : '') + ' />' +
+      '</label>';
+  }
+
+  /* ==========================================================
+   * 四之二、日历页顶部：同步状态条
+   *   游客 → 明确告知「只在本机 + 一键登录」
+   *   登录 → 显示「正在同步 / 已同步 · 时间 / 自动同步开关状态」
+   * ========================================================== */
+
+  function renderBar() {
+    var bar = byId('syncBar');
+    if (!bar) return;
+    if (!C.isConfigured()) { bar.hidden = true; return; }
+    bar.hidden = false;
+
+    if (!C.isLoggedIn()) {
+      var empty = localEmpty();
+      bar.className = 'sync-bar warn';
+      bar.innerHTML = '<span class="sync-ico">⚠️</span>' +
+        '<span class="sync-text">' + (empty
+          ? '现在只存本机：换手机就没了。登录后自动上云。'
+          : '这些记录只在这台手机里，换手机会看不到。') + '</span>' +
+        '<span class="sync-go">登录同步 ›</span>';
+      return;
+    }
+
+    bar.className = 'sync-bar' + (syncing ? '' : ' ok');
+    var txt = syncing
+      ? '正在同步到云端…'
+      : (lastSyncAt ? '已同步到云端 · ' + fmtTime(new Date(lastSyncAt).toISOString()) : '已登录，等待首次同步');
+    bar.innerHTML = '<span class="sync-ico">☁️</span>' +
+      '<span class="sync-text">' + txt + '</span>' +
+      '<span class="sync-go">' + (C.isAutoSyncOn() ? '自动同步中 ›' : '自动同步已关 ›') + '</span>';
+  }
+
+  function render() {
+    renderChips();
+    renderAcct();
+    renderCloud();
+    renderBar();
+  }
+
+  /* ==========================================================
+   * 五、登录 / 注册 弹层
+   * ========================================================== */
+
+  function openAuth(mode) {
+    authMode = mode === 'register' ? 'register' : 'login';
+    applyAuthMode();
+    byId('authAccount').value = '';
+    byId('authPassword').value = '';
+    byId('authError').textContent = '';
+    UI.openSheet(byId('authMask'));
+    setTimeout(function () {
+      try { byId('authAccount').focus(); } catch (e) {}
+    }, 300);
+  }
+
+  function applyAuthMode() {
+    var isReg = authMode === 'register';
+    var tabs = byId('authTabs');
+    if (tabs && tabs.children) {
+      for (var i = 0; i < tabs.children.length; i++) {
+        var b = tabs.children[i];
+        b.classList.toggle('active', b.getAttribute('data-mode') === authMode);
+      }
+    }
+    byId('authSubmit').textContent = isReg ? '注册并登录' : '登录';
+    byId('authHint').textContent = isReg
+      ? '注册即创建独立账号：账号可填手机号、昵称或邮箱，密码至少 6 位。'
+      : '账号可填手机号、昵称或邮箱；忘记密码需在 Supabase 后台重置。';
+  }
+
+  function submitAuth() {
+    if (busy) return;
+    var account = String(byId('authAccount').value || '').trim();
+    var password = String(byId('authPassword').value || '');
+    var errEl = byId('authError');
+
+    if (account.length < 2) { errEl.textContent = '请填写账号（至少 2 个字符）'; return; }
+    if (password.length < 6) { errEl.textContent = '密码至少 6 位'; return; }
+
+    errEl.textContent = '';
+    busy = true;
+    byId('authSubmit').textContent = authMode === 'register' ? '注册中…' : '登录中…';
+
+    var task = authMode === 'register'
+      ? C.signUp(account, password).then(function (r) {
+          if (r.needConfirm) {
+            return Promise.reject({ code: 'need_confirm', message: '账号需邮箱验证：请在 Supabase 关闭 Confirm email 后重试' });
+          }
+        })
+      : C.signIn(account, password);
+
+    task.then(function () {
+      busy = false;
+      UI.closeSheet(byId('authMask'));
+      UI.toast('登录成功：' + ((C.currentUser() || {}).account || account), 2000);
+      render();
+      afterLogin();
+    }).catch(function (err) {
+      busy = false;
+      byId('authSubmit').textContent = authMode === 'register' ? '注册并登录' : '登录';
+      errEl.textContent = humanError(err);
+    });
+  }
+
+  /* ==========================================================
+   * 六、登录后：对比云端与本机
+   * ========================================================== */
+
+  function afterLogin() {
+    C.pull().then(function (row) {
+      if (!row) {
+        /* 云端空 → 直接把本机数据推上去，避免用户白登录 */
+        return C.push(S.exportObject()).then(function () {
+          lastSyncAt = Date.now();
+          renderCloud();
+          UI.toast('云端还没有数据，已把本机记录上传', 2200);
+        });
+      }
+      /* 本机没有记录（换手机、重装最常见）→ 直接恢复，不再多问一步 */
+      if (localEmpty()) {
+        importFromCloud(row.payload);
+        var c = localCount();
+        render();
+        UI.toast('已从云端恢复 ' + c.records + ' 天记录、' + c.loans + ' 笔借支', 3000);
+        return;
+      }
+      /* 云端有数据 → 让用户选，绝不静默覆盖 */
+      return UI.confirm({
+        title: '云端已有数据',
+        message: '云端备份时间：' + fmtFull(row.updatedAt) + '\n读取会用云端数据覆盖本机；选「保留本机」则先不动，稍后可手动上传。',
+        okText: '读取云端',
+        cancelText: '保留本机'
+      }).then(function (ok) {
+        if (!ok) { UI.toast('已保留本机数据，可随时手动上传'); return; }
+        importFromCloud(row.payload);
+        UI.toast('已读取云端数据', 2000);
+        render();
+      });
+    }).catch(function (err) {
+      toastErr(err);
+    });
+  }
+
+  /* ==========================================================
+   * 七、云存储动作
+   * ========================================================== */
+
+  /** 游客点云按钮 → 提示并引导去登录 */
+  function needLogin() {
+    UI.confirm({
+      title: '云存储未解锁',
+      message: '请先登录账号，才能使用云存储同步功能。',
+      okText: '去登录',
+      cancelText: '稍后'
+    }).then(function (ok) {
+      if (ok) goSettings(function () { openAuth('login'); });
+    });
+  }
+
+  function needConfig() {
+    UI.confirm({
+      title: '云存储还没配置',
+      message: '请先在代码顶部填写 Supabase 项目地址与 anon 密钥（SUPABASE_URL / SUPABASE_ANON_KEY），再回来使用。',
+      okText: '知道了',
+      cancelText: '关闭'
+    });
+  }
+
+  function doUpload() {
+    UI.confirm({
+      title: '上传到云端',
+      message: '会用本机当前数据覆盖云端版本（并自动留一份历史版本，可回滚）。',
+      okText: '上传',
+      cancelText: '取消'
+    }).then(function (ok) {
+      if (!ok) return;
+      UI.toast('正在上传…', 1200);
+      C.push(S.exportObject()).then(function () {
+        lastSyncAt = Date.now();
+        renderCloud();
+        UI.toast('已上传到云端', 2000);
+      }).catch(toastErr);
+    });
+  }
+
+  function doPull() {
+    UI.confirm({
+      title: '读取云端数据',
+      message: '会下载云端当前版本并覆盖本机记录与设置，且无法撤销（云端历史版本可回滚）。',
+      okText: '读取',
+      cancelText: '取消',
+      tone: 'danger'
+    }).then(function (ok) {
+      if (!ok) return;
+      C.pull().then(function (row) {
+        if (!row) { UI.toast('云端还没有数据'); return; }
+        importFromCloud(row.payload);
+        render();
+        UI.toast('已读取云端数据（' + fmtTime(row.updatedAt) + '）', 2400);
+      }).catch(toastErr);
+    });
+  }
+
+  function doHistory() {
+    byId('histList').innerHTML = '<div class="empty"><span class="ico">⏳</span><div class="t">正在读取…</div></div>';
+    UI.openSheet(byId('histMask'));
+    C.history().then(function (rows) {
+      if (!rows.length) {
+        byId('histList').innerHTML = '<div class="empty"><span class="ico">🗂️</span><div class="t">还没有历史版本</div>' +
+          '<div class="s">每次上传或自动同步都会留一份快照。</div></div>';
+        return;
+      }
+      byId('histList').innerHTML = rows.map(function (r) {
+        return '<div class="hist-item">' +
+          '<div class="hist-main">' +
+            '<div class="hist-time">' + fmtFull(r.created_at) + '</div>' +
+            '<div class="hist-sub">' + UI.esc(r.label || '历史版本') + '</div>' +
+          '</div>' +
+          '<button class="ghost-btn" data-restore="' + r.id + '" type="button">恢复</button>' +
+          '</div>';
+      }).join('');
+    }).catch(function (err) {
+      byId('histList').innerHTML = '<div class="empty"><span class="ico">⚠️</span><div class="t">' +
+        UI.esc(humanError(err)) + '</div></div>';
+    });
+  }
+
+  function doRestore(id) {
+    UI.confirm({
+      title: '恢复这个版本',
+      message: '会用该版本覆盖本机当前数据，且无法撤销。',
+      okText: '恢复',
+      cancelText: '取消',
+      tone: 'danger'
+    }).then(function (ok) {
+      if (!ok) return;
+      C.historyDetail(id).then(function (row) {
+        importFromCloud(row.payload);
+        UI.closeSheet(byId('histMask'));
+        UI.toast('已恢复到 ' + fmtFull(row.created_at) + ' 的版本', 2400);
+        render();
+      }).catch(toastErr);
+    });
+  }
+
+  /* ==========================================================
+   * 八、修改密码 / 退出
+   * ========================================================== */
+
+  function openPwdSheet() {
+    byId('pwdNew').value = '';
+    byId('pwdNew2').value = '';
+    byId('pwdHint').textContent = '密码至少 6 位；修改后其他设备需重新登录。';
+    UI.openSheet(byId('pwdMask'));
+    setTimeout(function () { try { byId('pwdNew').focus(); } catch (e) {} }, 300);
+  }
+
+  function savePwd() {
+    var a = String(byId('pwdNew').value || '');
+    var b = String(byId('pwdNew2').value || '');
+    if (a.length < 6) { byId('pwdHint').textContent = '新密码至少 6 位'; return; }
+    if (a !== b) { byId('pwdHint').textContent = '两次输入的密码不一致'; return; }
+    UI.toast('正在修改…', 1200);
+    C.changePassword(a).then(function () {
+      UI.closeSheet(byId('pwdMask'));
+      UI.toast('密码已修改', 2000);
+    }).catch(toastErr);
+  }
+
+  function doLogout() {
+    UI.confirm({
+      title: '退出登录',
+      message: '退出后云存储功能会被锁定，本机数据保留不变。',
+      okText: '退出',
+      cancelText: '取消',
+      tone: 'danger'
+    }).then(function (ok) {
+      if (!ok) return;
+      C.signOut().then(function () {
+        lastSyncAt = 0;
+        render();
+        UI.toast('已退出登录', 1800);
+      });
+    });
+  }
+
+  /* ==========================================================
+   * 九、自动同步
+   * ========================================================== */
+
+  function scheduleAutoSync() {
+    renderBar();
+    if (Date.now() < muteAutoUntil) return;
+
+    if (!C.isLoggedIn()) {
+      /* 游客：有记录时提醒一次「只存本机」，纯浏览不打扰 */
+      if (!guestHinted && !localEmpty()) {
+        guestHinted = true;
+        UI.toast('已存到本机；登录后自动上云，换手机不丢', 2600);
+      }
+      return;
+    }
+    if (!C.isConfigured() || !C.isAutoSyncOn()) return;
+
+    if (autoTimer) clearTimeout(autoTimer);
+    autoTimer = setTimeout(function () {
+      autoTimer = null;
+      syncing = true;
+      renderBar();
+      C.push(S.exportObject()).then(function () {
+        lastSyncAt = Date.now();
+        syncing = false;
+        renderCloud();
+        renderBar();
+      }).catch(function () {
+        /* 自动同步失败保持安静，用户可在卡片里手动重试 */
+        syncing = false;
+        renderBar();
+      });
+    }, 1200);
+  }
+
+  /* ==========================================================
+   * 九之一、启动自动恢复：换手机登录后不用手点「读取云端」
+   * ========================================================== */
+
+  function autoRestore() {
+    C.pull().then(function (row) {
+      if (!row) {
+        /* 云端还没有数据 → 把本机这份推上去（首次备份） */
+        if (localEmpty()) { render(); return; }
+        syncing = true;
+        renderBar();
+        return C.push(S.exportObject()).then(function () {
+          lastSyncAt = Date.now();
+          syncing = false;
+          render();
+          UI.toast('已把本机数据备份到云端', 2200);
+        }).catch(function () {
+          syncing = false;
+          render();
+        });
+      }
+      lastSyncAt = new Date(row.updatedAt).getTime() || 0;
+      var cloud = dataOf(row.payload);
+      var cloudRecords = Object.keys(cloud.records || {}).length;
+      var cloudLoans = (cloud.loans || []).length;
+      if (localEmpty() && (cloudRecords || cloudLoans)) {
+        /* 典型场景：换新手机后第一次打开，本机空、云端有 → 直接恢复 */
+        importFromCloud(row.payload);
+        render();
+        UI.toast('已从云端恢复 ' + cloudRecords + ' 天记录、' + cloudLoans + ' 笔借支', 3000);
+        return;
+      }
+      render();
+    }).catch(function () { render(); });
+  }
+
+  /* ==========================================================
+   * 十、事件绑定与启动
+   * ========================================================== */
+
+  function init() {
+    C.init();
+
+    /* 顶部同步状态条：游客点击直达登录，已登录点击去云存储卡 */
+    var bar = byId('syncBar');
+    if (bar) {
+      bar.addEventListener('click', function () {
+        if (!C.isLoggedIn()) openAuth('login');
+        else goSettings();
+      });
+    }
+
+    /* 右上角胶囊 */
+    ['acctChipCal', 'acctChipStats', 'acctChipSet'].forEach(function (id) {
+      var el = byId(id);
+      if (el) el.addEventListener('click', onChipClick);
+    });
+
+    /* 账号卡（内容动态生成，用事件委托） */
+    byId('acctBody').addEventListener('click', function (e) {
+      var id = e.target && e.target.id;
+      if (id === 'acctLoginBtn') openAuth('login');
+      else if (id === 'acctPwdBtn') openPwdSheet();
+      else if (id === 'acctLogoutBtn') doLogout();
+    });
+
+    /* 云存储卡（委托 + 置灰拦截） */
+    byId('cloudBody').addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.cloud-act') : null;
+      if (!btn) return;
+      var act = btn.getAttribute('data-act');
+      if (!C.isConfigured()) { needConfig(); return; }
+      if (!C.isLoggedIn()) { needLogin(); return; }
+      if (act === 'upload') doUpload();
+      else if (act === 'pull') doPull();
+      else if (act === 'history') doHistory();
+    });
+
+    /* 自动同步开关 */
+    byId('cloudBody').addEventListener('change', function (e) {
+      if (e.target && e.target.id === 'autoSyncToggle') {
+        C.setAutoSync(!!e.target.checked);
+        UI.toast(e.target.checked ? '已开启自动同步' : '已关闭自动同步', 1600);
+      }
+    });
+
+    /* 登录/注册弹层 */
+    byId('authTabs').addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.auth-tab') : null;
+      if (!b) return;
+      authMode = b.getAttribute('data-mode') === 'register' ? 'register' : 'login';
+      applyAuthMode();
+    });
+    byId('authSubmit').addEventListener('click', submitAuth);
+    byId('authPassword').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') submitAuth();
+    });
+    byId('authMask').addEventListener('click', function (e) {
+      if (e.target === byId('authMask')) UI.closeSheet(byId('authMask'));
+    });
+
+    /* 改密码 / 历史弹层 */
+    byId('pwdSave').addEventListener('click', savePwd);
+    byId('pwdMask').addEventListener('click', function (e) {
+      if (e.target === byId('pwdMask')) UI.closeSheet(byId('pwdMask'));
+    });
+    byId('histMask').addEventListener('click', function (e) {
+      if (e.target === byId('histMask')) UI.closeSheet(byId('histMask'));
+      var rb = e.target.closest ? e.target.closest('[data-restore]') : null;
+      if (rb) doRestore(rb.getAttribute('data-restore'));
+    });
+
+    /* 数据一改 → 自动同步（登录 + 开启时才生效） */
+    S.onChange(scheduleAutoSync);
+
+    render();
+    /* 已登录：启动即恢复/备份，不需要用户手点「读取云端数据」 */
+    if (C.isLoggedIn()) autoRestore();
+  }
+
+  global.GC = global.GC || {};
+  global.GC.pages = global.GC.pages || {};
+  global.GC.pages.account = { init: init, render: render };
+  global.GC.account = { openAuth: openAuth, needLogin: needLogin };
+})(window);
+</script>
+<script>
+/* ============================================================
+   app.js · 应用入口：Tab 路由 / 变更刷新 / Service Worker
+   Tab：日历（含本月结算） / 统计 / 设置
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  var S = global.GC.store;
+  var pages = global.GC.pages;
+  var current = 'calendar';
+
+  function byId(id) { return document.getElementById(id); }
+
+  function show(name) {
+    if (!pages[name]) name = 'calendar';
+    current = name;
+
+    var all = document.querySelectorAll('.page');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.toggle('active', all[i].id === 'page-' + name);
+    }
+    var tabs = document.querySelectorAll('.tab');
+    for (var j = 0; j < tabs.length; j++) {
+      tabs[j].classList.toggle('active', tabs[j].getAttribute('data-page') === name);
+    }
+
+    if (pages[name] && pages[name].render) pages[name].render();
+    /* 进入设置页时刷新账号 / 云存储卡片状态 */
+    if (name === 'settings' && pages.account) pages.account.render();
+
+    /* 离开日历页时收起班次批量条 */
+    if (name !== 'calendar') byId('batchBar').hidden = true;
+
+    /* 切页后回到顶部 */
+    var page = byId('page-' + name);
+    if (page) {
+      var body = page.querySelector('.page-body');
+      if (body) body.scrollTop = 0;
+    }
+  }
+
+  function init() {
+    pages.calendar.init();
+    pages.stats.init();
+    pages.settings.init();
+    if (pages.account && pages.account.init) pages.account.init();   /* 账号 + 云存储 */
+
+    byId('tabbar').addEventListener('click', function (e) {
+      var tab = e.target.closest ? e.target.closest('.tab') : null;
+      if (!tab) return;
+      var name = tab.getAttribute('data-page');
+      if (name) show(name);
+    });
+
+    /* 任何数据变更 → 重绘当前页 */
+    S.onChange(function () {
+      var p = pages[current];
+      if (p && p.render) p.render();
+    });
+
+    /* 回到前台时刷新（跨天后 today 高亮与今日日期需要更新） */
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) show(current);
+    });
+
+    show('calendar');
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})(window);
+</script>
+<script>
+/* ------------------------------------------------------------------
+ * 托管平台预览提示清理
+ * 部分免费托管（如 workers.dev 子域）会在页面底部注入一行英文提示，
+ * 例如 "For demostration and testing purposes only..."，会盖住底部 Tab。
+ * 这里只移除「文本命中该提示 + 定位为 fixed/sticky/absolute」的浮层，
+ * 不触碰应用自身任何元素；找不到就什么都不做。
+ * ------------------------------------------------------------------ */
+(function () {
+  var PAT = /demostration|demonstration and testing|do not enter any sensitive data/i;
+
+  function isFloat(el) {
+    try {
+      var cs = window.getComputedStyle(el);
+      return !!cs && (cs.position === 'fixed' || cs.position === 'sticky' || cs.position === 'absolute');
+    } catch (e) { return false; }
+  }
+
+  function drop(el) {
+    if (!el || el.nodeType !== 1 || el.__hgClean) return;
+    var t = el.textContent || '';
+    if (t.length > 400 || !PAT.test(t)) return;
+    if (!isFloat(el)) return;
+    el.__hgClean = 1;
+    el.style.setProperty('display', 'none', 'important');
+    el.style.setProperty('pointer-events', 'none', 'important');
+    if (el.parentNode) el.parentNode.removeChild(el);
+  }
+
+  function scan(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var nodes = scope.querySelectorAll('div, aside, section, footer');
+    for (var i = 0; i < nodes.length && i < 500; i++) drop(nodes[i]);
+  }
+
+  function init() {
+    scan(document);
+    if (window.MutationObserver && document.body) {
+      try {
+        new MutationObserver(function (muts) {
+          for (var i = 0; i < muts.length; i++) {
+            var add = muts[i].addedNodes;
+            for (var j = 0; j < add.length; j++) {
+              var n = add[j];
+              if (!n || n.nodeType !== 1) continue;
+              if (PAT.test(n.textContent || '')) { drop(n); scan(n); }
+            }
+          }
+        }).observe(document.body, { childList: true, subtree: true });
+      } catch (e) { /* 老浏览器不支持就算了 */ }
+    }
+    [300, 900, 1800, 3000].forEach(function (ms) {
+      setTimeout(function () { scan(document); }, ms);
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
